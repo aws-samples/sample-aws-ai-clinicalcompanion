@@ -1,0 +1,215 @@
+{
+  "patient_id": "006",
+  "patient_name": "Roberto Martinez",
+  "mrn": "MRN-2024-00006",
+  "chart_number": "CHT-US-006",
+  "first_name": "Roberto",
+  "last_name": "Martinez",
+  "date_of_birth": "1979-08-30",
+  "sex_at_birth": "Male",
+  "gender_identity": "Male",
+  "race": "Hispanic or Latino",
+  "ethnicity": "Mexican American",
+  "medical_history": {
+    "past_diagnoses": [
+      "Coronary artery disease",
+      "Myocardial infarction (STEMI, 2023)",
+      "Type 2 Diabetes Mellitus",
+      "Obesity"
+    ],
+    "chronic_conditions": [
+      {
+        "condition": "Coronary artery disease",
+        "diagnosed": "2023-05-10",
+        "status": "Active",
+        "notes": "Post-STEMI, 2 drug-eluting stents to LAD"
+      },
+      {
+        "condition": "Type 2 Diabetes Mellitus",
+        "diagnosed": "2020-02-15",
+        "status": "Active",
+        "notes": "HbA1c 8.1%, suboptimal control"
+      }
+    ],
+    "past_surgeries": [
+      {
+        "procedure": "PCI with 2 drug-eluting stents (LAD)",
+        "date": "2023-05-10",
+        "indication": "Acute STEMI"
+      }
+    ],
+    "past_hospitalizations": [
+      {
+        "reason": "Acute STEMI",
+        "date": "2023-05-10",
+        "duration_days": 4
+      }
+    ],
+    "problem_list": [
+      "Coronary artery disease (post-PCI)",
+      "Chest pain on exertion (new onset)",
+      "Type 2 Diabetes Mellitus (poorly controlled)",
+      "Obesity (BMI 34)",
+      "Previous iodinated contrast reaction"
+    ],
+    "family_history": [
+      {
+        "relation": "Father",
+        "condition": "Myocardial infarction",
+        "age_at_onset": 48
+      },
+      {
+        "relation": "Mother",
+        "condition": "Type 2 Diabetes",
+        "age_at_onset": 42
+      },
+      {
+        "relation": "Brother",
+        "condition": "Coronary artery disease",
+        "age_at_onset": 44
+      }
+    ],
+    "social_history": {
+      "living_situation": "Lives with wife and 3 children",
+      "exercise": "Cardiac rehab completed, now walks 20 min/day",
+      "diet": "Attempting low-carb, struggles with adherence"
+    },
+    "vaccination_history": [
+      {
+        "vaccine": "Influenza",
+        "date": "2023-10-10"
+      },
+      {
+        "vaccine": "COVID-19 booster",
+        "date": "2023-09-01"
+      }
+    ],
+    "smoking_status": "Former smoker (quit 2023 post-MI, 15 pack-years)",
+    "alcohol_use": "None (quit post-MI)",
+    "drug_use": "None",
+    "occupation": "Construction foreman"
+  },
+  "allergies": [
+    {
+      "allergy_substance": "Iodinated contrast media",
+      "allergy_type": "Drug",
+      "reaction": "Urticaria, facial angioedema",
+      "severity": "Severe"
+    },
+    {
+      "allergy_substance": "NSAIDs (Ibuprofen)",
+      "allergy_type": "Drug",
+      "reaction": "Gastric bleeding",
+      "severity": "Moderate"
+    }
+  ],
+  "medications": [
+    {
+      "medication_name": "Aspirin",
+      "medication_code": "RxNorm:1191",
+      "dose": "81",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence"
+    },
+    {
+      "medication_name": "Clopidogrel",
+      "medication_code": "RxNorm:32968",
+      "dose": "75",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence, DAPT until May 2024"
+    },
+    {
+      "medication_name": "Atorvastatin",
+      "medication_code": "RxNorm:83367",
+      "dose": "80",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence"
+    },
+    {
+      "medication_name": "Metformin",
+      "medication_code": "RxNorm:6809",
+      "dose": "500",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Twice daily",
+      "adherence_notes": "Moderate adherence, GI side effects"
+    },
+    {
+      "medication_name": "Metoprolol succinate",
+      "medication_code": "RxNorm:6918",
+      "dose": "50",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence"
+    },
+    {
+      "medication_name": "Ramipril",
+      "medication_code": "RxNorm:35296",
+      "dose": "5",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence"
+    }
+  ],
+  "vital_signs": {
+    "blood_pressure_systolic": 142,
+    "blood_pressure_diastolic": 88,
+    "heart_rate": 68,
+    "respiratory_rate": 16,
+    "temperature": 36.7,
+    "spo2": 97,
+    "weight": 102,
+    "height": 173,
+    "bmi": 34.1
+  },
+  "lab_results": [
+    {
+      "test": "HbA1c",
+      "value": 8.1,
+      "unit": "%",
+      "date": "2024-01-28",
+      "reference_range": "<7.0",
+      "flag": "HIGH"
+    },
+    {
+      "test": "LDL Cholesterol",
+      "value": 78,
+      "unit": "mg/dL",
+      "date": "2024-01-28",
+      "reference_range": "<70 (post-MI target)",
+      "flag": "HIGH"
+    },
+    {
+      "test": "Troponin I",
+      "value": 0.02,
+      "unit": "ng/mL",
+      "date": "2024-02-08",
+      "reference_range": "<0.04",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "eGFR",
+      "value": 85,
+      "unit": "mL/min/1.73m²",
+      "date": "2024-01-28",
+      "reference_range": ">60",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "BNP",
+      "value": 120,
+      "unit": "pg/mL",
+      "date": "2024-02-08",
+      "reference_range": "<100",
+      "flag": "HIGH"
+    }
+  ]
+}

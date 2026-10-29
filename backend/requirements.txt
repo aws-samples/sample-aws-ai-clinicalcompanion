@@ -1,0 +1,13 @@
+# Agent runtime dependencies (installed into the AgentCore container and for local tests).
+# Pinned to the versions validated end to end; unpinned, pip cannot resolve this set
+# ("resolution-too-deep") and builds would pick up untested releases.
+bedrock-agentcore==1.25.0
+strands-agents[otel]==1.62.0
+boto3==1.43.119
+urllib3==2.8.0
+python-dotenv==1.2.4
+requests==2.34.2
+aws-opentelemetry-distro==0.21.0
+opentelemetry-api==1.44.0
+opentelemetry-sdk==1.44.0
+ag-ui-protocol==0.1.22

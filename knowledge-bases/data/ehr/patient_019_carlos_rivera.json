@@ -1,0 +1,151 @@
+{
+  "patient_id": "019",
+  "patient_name": "Carlos Rivera",
+  "mrn": "MRN-2024-00019",
+  "chart_number": "CHT-US-019",
+  "first_name": "Carlos",
+  "last_name": "Rivera",
+  "date_of_birth": "1999-05-17",
+  "sex_at_birth": "Male",
+  "gender_identity": "Non-binary",
+  "race": "Hispanic or Latino",
+  "ethnicity": "Puerto Rican",
+  "medical_history": {
+    "past_diagnoses": [
+      "ACL tear (right knee, 2021, surgically repaired)",
+      "Asthma (exercise-induced)"
+    ],
+    "chronic_conditions": [
+      {
+        "condition": "Exercise-induced asthma",
+        "diagnosed": "2015-03-10",
+        "status": "Active",
+        "notes": "Well-controlled with pre-exercise inhaler"
+      }
+    ],
+    "past_surgeries": [
+      {
+        "procedure": "ACL reconstruction (right knee, hamstring autograft)",
+        "date": "2021-09-20",
+        "indication": "Complete ACL tear from soccer"
+      }
+    ],
+    "past_hospitalizations": [
+      {
+        "reason": "ACL reconstruction surgery",
+        "date": "2021-09-20",
+        "duration_days": 1
+      }
+    ],
+    "problem_list": [
+      "Acute right shoulder injury (fall during basketball)",
+      "Suspected rotator cuff tear or labral injury",
+      "Exercise-induced asthma",
+      "Previous ACL reconstruction (right knee)"
+    ],
+    "family_history": [
+      {
+        "relation": "Father",
+        "condition": "Type 2 Diabetes",
+        "age_at_onset": 50
+      },
+      {
+        "relation": "Mother",
+        "condition": "Asthma",
+        "age_at_onset": 20
+      }
+    ],
+    "social_history": {
+      "living_situation": "Lives with 2 roommates",
+      "exercise": "Basketball, weightlifting, running (competitive amateur)",
+      "diet": "High-protein athletic diet"
+    },
+    "vaccination_history": [
+      {
+        "vaccine": "Influenza",
+        "date": "2023-10-15"
+      },
+      {
+        "vaccine": "COVID-19 booster",
+        "date": "2023-09-01"
+      },
+      {
+        "vaccine": "Tdap",
+        "date": "2021-09-15"
+      },
+      {
+        "vaccine": "Meningococcal B",
+        "date": "2019-08-01"
+      }
+    ],
+    "smoking_status": "Never smoker",
+    "alcohol_use": "Social (weekends, 3-4 drinks)",
+    "drug_use": "Cannabis (occasional, recreational)",
+    "occupation": "Graduate student (kinesiology)"
+  },
+  "allergies": [
+    {
+      "allergy_substance": "Latex",
+      "allergy_type": "Environmental",
+      "reaction": "Contact urticaria",
+      "severity": "Mild"
+    }
+  ],
+  "medications": [
+    {
+      "medication_name": "Albuterol (Salbutamol)",
+      "medication_code": "RxNorm:435",
+      "dose": "90",
+      "dose_unit": "mcg",
+      "route": "Inhaled",
+      "frequency": "15 minutes before exercise",
+      "adherence_notes": "Good adherence, uses before all workouts"
+    },
+    {
+      "medication_name": "Ibuprofen",
+      "medication_code": "RxNorm:5640",
+      "dose": "400",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "As needed for pain",
+      "adherence_notes": "PRN use, currently taking TDS for shoulder pain"
+    }
+  ],
+  "vital_signs": {
+    "blood_pressure_systolic": 120,
+    "blood_pressure_diastolic": 72,
+    "heart_rate": 62,
+    "respiratory_rate": 14,
+    "temperature": 36.8,
+    "spo2": 99,
+    "weight": 78,
+    "height": 180,
+    "bmi": 24.1
+  },
+  "lab_results": [
+    {
+      "test": "Hemoglobin",
+      "value": 15.2,
+      "unit": "g/dL",
+      "date": "2024-02-08",
+      "reference_range": "13.0-17.0",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "CRP",
+      "value": 8,
+      "unit": "mg/L",
+      "date": "2024-02-08",
+      "reference_range": "<5",
+      "flag": "HIGH"
+    },
+    {
+      "test": "eGFR",
+      "value": 120,
+      "unit": "mL/min/1.73m²",
+      "date": "2024-02-08",
+      "reference_range": ">60",
+      "flag": "NORMAL"
+    }
+  ]
+}

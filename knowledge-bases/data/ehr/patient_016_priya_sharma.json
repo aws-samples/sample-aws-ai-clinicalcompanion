@@ -1,0 +1,208 @@
+{
+  "patient_id": "016",
+  "patient_name": "Priya Sharma",
+  "mrn": "MRN-2024-00016",
+  "chart_number": "CHT-IN-016",
+  "first_name": "Priya",
+  "last_name": "Sharma",
+  "date_of_birth": "1976-08-25",
+  "sex_at_birth": "Female",
+  "gender_identity": "Female",
+  "race": "Asian",
+  "ethnicity": "South Asian (Indian)",
+  "medical_history": {
+    "past_diagnoses": [
+      "Breast cancer (ER+/PR+/HER2-, Stage IIA, 2022)",
+      "Hypothyroidism",
+      "Vitamin B12 deficiency"
+    ],
+    "chronic_conditions": [
+      {
+        "condition": "Breast cancer (post-treatment surveillance)",
+        "diagnosed": "2022-03-10",
+        "status": "Post-treatment",
+        "notes": "Left mastectomy + adjuvant chemo (TC x4) + radiation. Now on tamoxifen. Last mammogram 6 months ago clear."
+      },
+      {
+        "condition": "Hypothyroidism",
+        "diagnosed": "2015-09-20",
+        "status": "Active",
+        "notes": "Well-controlled on levothyroxine"
+      }
+    ],
+    "past_surgeries": [
+      {
+        "procedure": "Left modified radical mastectomy with sentinel node biopsy",
+        "date": "2022-04-15",
+        "indication": "Breast cancer Stage IIA"
+      },
+      {
+        "procedure": "Port-a-cath insertion",
+        "date": "2022-05-01",
+        "indication": "Chemotherapy access"
+      },
+      {
+        "procedure": "Port-a-cath removal",
+        "date": "2022-12-15",
+        "indication": "Chemotherapy completed"
+      }
+    ],
+    "past_hospitalizations": [
+      {
+        "reason": "Mastectomy",
+        "date": "2022-04-15",
+        "duration_days": 3
+      },
+      {
+        "reason": "Febrile neutropenia (chemo complication)",
+        "date": "2022-07-20",
+        "duration_days": 5
+      }
+    ],
+    "problem_list": [
+      "Breast cancer surveillance (2 years post-treatment)",
+      "New back pain (? bone metastasis)",
+      "Hypothyroidism",
+      "Tamoxifen-related hot flashes",
+      "Vitamin B12 deficiency"
+    ],
+    "family_history": [
+      {
+        "relation": "Mother",
+        "condition": "Breast cancer",
+        "age_at_onset": 50
+      },
+      {
+        "relation": "Maternal aunt",
+        "condition": "Ovarian cancer",
+        "age_at_onset": 55
+      }
+    ],
+    "social_history": {
+      "living_situation": "Lives with husband and teenage daughter",
+      "exercise": "Yoga 4x/week, walking daily",
+      "diet": "Vegetarian, high-calcium diet"
+    },
+    "vaccination_history": [
+      {
+        "vaccine": "Influenza",
+        "date": "2023-10-15"
+      },
+      {
+        "vaccine": "COVID-19 booster",
+        "date": "2023-09-01"
+      }
+    ],
+    "smoking_status": "Never smoker",
+    "alcohol_use": "None",
+    "drug_use": "None",
+    "occupation": "Software architect",
+    "pregnancy_history": {
+      "gravida": 1,
+      "para": 1,
+      "last_delivery": "2008-05-20",
+      "pregnancy_status": "Not pregnant",
+      "contraception": "Not applicable (on tamoxifen, advised against pregnancy)",
+      "notes": "Premenopausal, tamoxifen for 5 years planned"
+    }
+  },
+  "allergies": [
+    {
+      "allergy_substance": "Ciprofloxacin",
+      "allergy_type": "Drug",
+      "reaction": "Tendinopathy",
+      "severity": "Moderate"
+    }
+  ],
+  "medications": [
+    {
+      "medication_name": "Tamoxifen",
+      "medication_code": "RxNorm:10324",
+      "dose": "20",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence, 2 years into 5-year course"
+    },
+    {
+      "medication_name": "Levothyroxine",
+      "medication_code": "RxNorm:10582",
+      "dose": "75",
+      "dose_unit": "mcg",
+      "route": "Oral",
+      "frequency": "Once daily (empty stomach)",
+      "adherence_notes": "Good adherence"
+    },
+    {
+      "medication_name": "Vitamin B12 (Cyanocobalamin)",
+      "medication_code": "RxNorm:11248",
+      "dose": "1000",
+      "dose_unit": "mcg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence"
+    },
+    {
+      "medication_name": "Calcium/Vitamin D",
+      "medication_code": "RxNorm:216373",
+      "dose": "500/400",
+      "dose_unit": "mg/IU",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence"
+    }
+  ],
+  "vital_signs": {
+    "blood_pressure_systolic": 118,
+    "blood_pressure_diastolic": 72,
+    "heart_rate": 74,
+    "respiratory_rate": 14,
+    "temperature": 36.7,
+    "spo2": 99,
+    "weight": 58,
+    "height": 160,
+    "bmi": 22.7
+  },
+  "lab_results": [
+    {
+      "test": "CA 15-3",
+      "value": 18,
+      "unit": "U/mL",
+      "date": "2024-01-20",
+      "reference_range": "<30",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "Alkaline phosphatase",
+      "value": 95,
+      "unit": "U/L",
+      "date": "2024-02-05",
+      "reference_range": "30-120",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "TSH",
+      "value": 2.1,
+      "unit": "mIU/L",
+      "date": "2024-01-20",
+      "reference_range": "0.4-4.0",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "eGFR",
+      "value": 95,
+      "unit": "mL/min/1.73m²",
+      "date": "2024-01-20",
+      "reference_range": ">60",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "Vitamin B12",
+      "value": 350,
+      "unit": "pg/mL",
+      "date": "2024-01-20",
+      "reference_range": "200-900",
+      "flag": "NORMAL"
+    }
+  ]
+}

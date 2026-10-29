@@ -1,0 +1,177 @@
+{
+  "patient_id": "014",
+  "patient_name": "Maria Garcia-Lopez",
+  "mrn": "MRN-2024-00014",
+  "chart_number": "CHT-ES-014",
+  "first_name": "Maria",
+  "last_name": "Garcia-Lopez",
+  "date_of_birth": "1986-11-09",
+  "sex_at_birth": "Female",
+  "gender_identity": "Female",
+  "race": "Hispanic or Latino",
+  "ethnicity": "Spanish",
+  "medical_history": {
+    "past_diagnoses": [
+      "Relapsing-remitting multiple sclerosis (RRMS)",
+      "Depression",
+      "Vitamin D deficiency"
+    ],
+    "chronic_conditions": [
+      {
+        "condition": "Relapsing-remitting multiple sclerosis",
+        "diagnosed": "2019-08-15",
+        "status": "Active",
+        "notes": "On natalizumab, JCV antibody negative, EDSS 2.0, last relapse 18 months ago"
+      },
+      {
+        "condition": "Depression",
+        "diagnosed": "2020-01-10",
+        "status": "Active",
+        "notes": "Managed with SSRI, stable"
+      }
+    ],
+    "past_surgeries": [],
+    "past_hospitalizations": [
+      {
+        "reason": "MS relapse (optic neuritis)",
+        "date": "2022-07-20",
+        "duration_days": 5
+      }
+    ],
+    "problem_list": [
+      "MS - due for annual surveillance MRI",
+      "New left arm numbness (? relapse)",
+      "Depression (stable)",
+      "Vitamin D deficiency"
+    ],
+    "family_history": [
+      {
+        "relation": "Aunt (maternal)",
+        "condition": "Multiple sclerosis",
+        "age_at_onset": 30
+      },
+      {
+        "relation": "Mother",
+        "condition": "Rheumatoid arthritis",
+        "age_at_onset": 45
+      }
+    ],
+    "social_history": {
+      "living_situation": "Lives with husband and 2 children (ages 5, 8)",
+      "exercise": "Swimming 2x/week, walking daily",
+      "diet": "Mediterranean diet"
+    },
+    "vaccination_history": [
+      {
+        "vaccine": "Influenza",
+        "date": "2023-10-10"
+      },
+      {
+        "vaccine": "COVID-19 booster",
+        "date": "2023-09-20"
+      }
+    ],
+    "smoking_status": "Never smoker",
+    "alcohol_use": "Rare (special occasions only)",
+    "drug_use": "None",
+    "occupation": "University lecturer (literature)",
+    "pregnancy_history": {
+      "gravida": 2,
+      "para": 2,
+      "last_delivery": "2019-02-15",
+      "pregnancy_status": "Not pregnant",
+      "contraception": "IUD (Mirena)",
+      "notes": "MS stable during both pregnancies, relapsed 3 months postpartum after first"
+    }
+  },
+  "allergies": [
+    {
+      "allergy_substance": "Gadolinium (Gadopentetate dimeglumine)",
+      "allergy_type": "Drug",
+      "reaction": "Nausea, headache",
+      "severity": "Mild"
+    }
+  ],
+  "medications": [
+    {
+      "medication_name": "Natalizumab",
+      "medication_code": "RxNorm:354770",
+      "dose": "300",
+      "dose_unit": "mg",
+      "route": "Intravenous",
+      "frequency": "Every 4 weeks",
+      "adherence_notes": "Infusion center, good adherence"
+    },
+    {
+      "medication_name": "Escitalopram",
+      "medication_code": "RxNorm:321988",
+      "dose": "10",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence"
+    },
+    {
+      "medication_name": "Vitamin D3",
+      "medication_code": "RxNorm:11253",
+      "dose": "2000",
+      "dose_unit": "IU",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence"
+    }
+  ],
+  "vital_signs": {
+    "blood_pressure_systolic": 112,
+    "blood_pressure_diastolic": 68,
+    "heart_rate": 72,
+    "respiratory_rate": 14,
+    "temperature": 36.6,
+    "spo2": 99,
+    "weight": 62,
+    "height": 165,
+    "bmi": 22.8
+  },
+  "lab_results": [
+    {
+      "test": "eGFR",
+      "value": 110,
+      "unit": "mL/min/1.73m²",
+      "date": "2024-01-15",
+      "reference_range": ">60",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "JCV antibody index",
+      "value": 0.3,
+      "unit": "index",
+      "date": "2024-01-15",
+      "reference_range": "<0.9 (low PML risk)",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "Vitamin D (25-OH)",
+      "value": 35,
+      "unit": "ng/mL",
+      "date": "2024-01-15",
+      "reference_range": "30-100",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "Lymphocyte count",
+      "value": 1.8,
+      "unit": "x10^9/L",
+      "date": "2024-01-15",
+      "reference_range": "1.0-4.0",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "Liver function (ALT)",
+      "value": 22,
+      "unit": "U/L",
+      "date": "2024-01-15",
+      "reference_range": "7-35",
+      "flag": "NORMAL"
+    }
+  ]
+}

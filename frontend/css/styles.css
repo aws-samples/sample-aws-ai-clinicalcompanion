@@ -1,0 +1,428 @@
+/**
+ * ClinicalCompass Base Styles
+ * 
+ * Core layout, header, buttons, and responsive rules.
+ * Chat-specific styles are in chat.css.
+ */
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: #f0f2f5;
+  min-height: 100vh;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0;
+  background: white;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+/* App Layout — sidebar + main content */
+.app-layout {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* ── Left Sidebar ── */
+.left-sidebar {
+  width: 280px;
+  min-width: 280px;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  overflow: hidden;
+  height: 100%;
+  max-height: 100%;
+}
+
+.sidebar-header {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.sidebar-header h2 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+}
+
+/* ── Patient Context Pane ── */
+.patient-context-pane {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 0;
+  min-height: 0;
+}
+
+.patient-context-empty {
+  color: #9ca3af;
+  font-size: 13px;
+  font-style: italic;
+  text-align: center;
+  padding: 24px 12px;
+}
+
+.patient-context-header {
+  margin-bottom: 16px;
+  padding: 0 16px 12px 16px;
+
+}
+
+.patient-context-header h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 2px 0;
+}
+
+.patient-context-header p {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.patient-context-section {
+  margin-bottom: 0;
+  padding: 12px 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.patient-context-section:first-of-type {
+  border-top: none;
+}
+
+.patient-context-section h4 {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 6px 0;
+}
+
+.patient-context-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.patient-context-list li {
+  font-size: 13px;
+  color: #374151;
+  padding: 4px 0;
+  line-height: 1.4;
+  border-bottom: none;
+}
+
+.patient-context-list li:last-child {
+  border-bottom: none;
+}
+
+.patient-context-list li strong {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.patient-context-none {
+  font-size: 13px;
+  color: #9ca3af;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Severity badges */
+.severity-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 1px 6px;
+  border-radius: 10px;
+  text-transform: capitalize;
+}
+
+.severity-badge.severity-high,
+.severity-badge.severity-severe {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.severity-badge.severity-moderate {
+  background: #fffbeb;
+  color: #d97706;
+}
+
+.severity-badge.severity-low,
+.severity-badge.severity-mild {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+/* Lab result flags */
+.lab-flag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 1px 5px;
+  border-radius: 3px;
+  margin-left: 4px;
+}
+
+.lab-flag-high {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.lab-flag-low {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+/* Demographics list */
+.patient-context-demographics li {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Lab date */
+.lab-date {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+/* ── Guidelines Used ── */
+.guidelines-used-list li {
+  font-size: 13px;
+  color: #374151;
+  padding: 4px 0;
+  line-height: 1.4;
+}
+
+/* ── Safety Checks ── */
+.safety-checks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.safety-check-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  padding: 5px 0;
+  line-height: 1.4;
+}
+
+.safety-check-bullet {
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.safety-check-green .safety-check-bullet {
+  background-color: #16a34a;
+}
+
+.safety-check-yellow .safety-check-bullet {
+  background-color: #d97706;
+}
+
+.safety-check-red .safety-check-bullet {
+  background-color: #dc2626;
+}
+
+.safety-check-text {
+  color: #374151;
+  flex: 1;
+}
+
+.safety-check-status {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 1px 6px;
+  border-radius: 10px;
+}
+
+.safety-check-green .safety-check-status {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+.safety-check-yellow .safety-check-status {
+  background: #fffbeb;
+  color: #d97706;
+}
+
+.safety-check-red .safety-check-status {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+/* Header */
+.header {
+  background: #1e293b;
+  color: white;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Connection Status */
+.connection-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ef4444;
+  animation: pulse 2s infinite;
+}
+
+.status-dot.connected {
+  background: #10b981;
+}
+
+.status-dot.connecting {
+  background: #f59e0b;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.status-text {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+
+  .container {
+    border-radius: 0;
+    min-height: 100vh;
+  }
+
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .left-sidebar {
+    width: 100%;
+    min-width: 100%;
+    max-height: 200px;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .header {
+    padding: 16px 20px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+  }
+
+  .container {
+    box-shadow: none;
+  }
+
+  .header {
+    display: none;
+  }
+}
+
+/* ── Disclaimer Banner ── */
+.disclaimer-message {
+  max-width: 100% !important;
+  align-self: stretch !important;
+}
+
+.disclaimer-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #fefce8;
+  border: 1px solid #fde047;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #713f12;
+}
+
+.disclaimer-icon {
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.disclaimer-text {
+  flex: 1;
+}
+
+.disclaimer-text code {
+  font-size: 11px;
+  background: #fef9c3;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+.trail-id {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 10px;
+  color: #92400e;
+}

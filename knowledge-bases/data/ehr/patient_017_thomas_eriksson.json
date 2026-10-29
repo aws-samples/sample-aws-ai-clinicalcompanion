@@ -1,0 +1,193 @@
+{
+  "patient_id": "017",
+  "patient_name": "Thomas Eriksson",
+  "mrn": "MRN-2024-00017",
+  "chart_number": "CHT-SE-017",
+  "first_name": "Thomas",
+  "last_name": "Eriksson",
+  "date_of_birth": "1968-01-30",
+  "sex_at_birth": "Male",
+  "gender_identity": "Male",
+  "race": "White",
+  "ethnicity": "Scandinavian (Swedish)",
+  "medical_history": {
+    "past_diagnoses": [
+      "Recurrent nephrolithiasis (calcium oxalate)",
+      "Gout",
+      "Hypertension"
+    ],
+    "chronic_conditions": [
+      {
+        "condition": "Recurrent kidney stones",
+        "diagnosed": "2016-05-10",
+        "status": "Active",
+        "notes": "4 episodes in 8 years, calcium oxalate stones, on preventive therapy"
+      },
+      {
+        "condition": "Gout",
+        "diagnosed": "2019-11-20",
+        "status": "Active",
+        "notes": "On allopurinol, well-controlled"
+      },
+      {
+        "condition": "Hypertension",
+        "diagnosed": "2017-03-15",
+        "status": "Active",
+        "notes": "Well-controlled on single agent"
+      }
+    ],
+    "past_surgeries": [
+      {
+        "procedure": "Extracorporeal shock wave lithotripsy (ESWL)",
+        "date": "2020-08-15",
+        "indication": "10mm left ureteric stone"
+      }
+    ],
+    "past_hospitalizations": [
+      {
+        "reason": "Renal colic",
+        "date": "2020-08-10",
+        "duration_days": 2
+      }
+    ],
+    "problem_list": [
+      "Acute left flank pain (? renal colic)",
+      "Recurrent nephrolithiasis",
+      "Gout",
+      "Hypertension"
+    ],
+    "family_history": [
+      {
+        "relation": "Father",
+        "condition": "Kidney stones",
+        "age_at_onset": 45
+      },
+      {
+        "relation": "Mother",
+        "condition": "Osteoporosis",
+        "age_at_onset": 65
+      }
+    ],
+    "social_history": {
+      "living_situation": "Lives with partner",
+      "exercise": "Cross-country skiing, cycling",
+      "diet": "High-protein diet, working on increasing fluid intake"
+    },
+    "vaccination_history": [
+      {
+        "vaccine": "Influenza",
+        "date": "2023-10-20"
+      },
+      {
+        "vaccine": "COVID-19 booster",
+        "date": "2023-09-15"
+      },
+      {
+        "vaccine": "Tetanus booster",
+        "date": "2022-06-01"
+      }
+    ],
+    "smoking_status": "Never smoker",
+    "alcohol_use": "Moderate (2-3 beers per week)",
+    "drug_use": "None",
+    "occupation": "Marine biologist"
+  },
+  "allergies": [
+    {
+      "allergy_substance": "Penicillin",
+      "allergy_type": "Drug",
+      "reaction": "Anaphylaxis",
+      "severity": "Severe"
+    }
+  ],
+  "medications": [
+    {
+      "medication_name": "Allopurinol",
+      "medication_code": "RxNorm:519",
+      "dose": "300",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence"
+    },
+    {
+      "medication_name": "Potassium citrate",
+      "medication_code": "RxNorm:8183",
+      "dose": "20",
+      "dose_unit": "mEq",
+      "route": "Oral",
+      "frequency": "Three times daily",
+      "adherence_notes": "Moderate adherence, GI discomfort"
+    },
+    {
+      "medication_name": "Candesartan",
+      "medication_code": "RxNorm:214354",
+      "dose": "16",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence"
+    }
+  ],
+  "vital_signs": {
+    "blood_pressure_systolic": 132,
+    "blood_pressure_diastolic": 82,
+    "heart_rate": 85,
+    "respiratory_rate": 18,
+    "temperature": 37.1,
+    "spo2": 98,
+    "weight": 88,
+    "height": 182,
+    "bmi": 26.6
+  },
+  "lab_results": [
+    {
+      "test": "eGFR",
+      "value": 82,
+      "unit": "mL/min/1.73m²",
+      "date": "2024-02-08",
+      "reference_range": ">60",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "Serum Creatinine",
+      "value": 1.0,
+      "unit": "mg/dL",
+      "date": "2024-02-08",
+      "reference_range": "0.7-1.3",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "Uric acid",
+      "value": 6.5,
+      "unit": "mg/dL",
+      "date": "2024-02-08",
+      "reference_range": "3.5-7.2",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "Calcium",
+      "value": 10.2,
+      "unit": "mg/dL",
+      "date": "2024-02-08",
+      "reference_range": "8.5-10.5",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "WBC",
+      "value": 9.8,
+      "unit": "x10^9/L",
+      "date": "2024-02-08",
+      "reference_range": "4.0-11.0",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "Urinalysis - RBC",
+      "value": 25,
+      "unit": "per HPF",
+      "date": "2024-02-08",
+      "reference_range": "0-3",
+      "flag": "HIGH"
+    }
+  ]
+}

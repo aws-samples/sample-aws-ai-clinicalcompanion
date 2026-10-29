@@ -1,0 +1,248 @@
+{
+  "patient_id": "007",
+  "patient_name": "Fatima Al-Hassan",
+  "mrn": "MRN-2024-00007",
+  "chart_number": "CHT-UK-007",
+  "first_name": "Fatima",
+  "last_name": "Al-Hassan",
+  "date_of_birth": "1969-02-14",
+  "sex_at_birth": "Female",
+  "gender_identity": "Female",
+  "race": "Middle Eastern",
+  "ethnicity": "Arab (Jordanian British)",
+  "medical_history": {
+    "past_diagnoses": [
+      "Chronic Kidney Disease Stage 4",
+      "Type 2 Diabetes Mellitus",
+      "Hypertension",
+      "Diabetic retinopathy (non-proliferative)",
+      "Peripheral neuropathy"
+    ],
+    "chronic_conditions": [
+      {
+        "condition": "Chronic Kidney Disease Stage 4",
+        "diagnosed": "2021-09-10",
+        "status": "Active",
+        "notes": "eGFR 22 mL/min/1.73m², under nephrology care, pre-dialysis planning"
+      },
+      {
+        "condition": "Type 2 Diabetes Mellitus",
+        "diagnosed": "2008-03-20",
+        "status": "Active",
+        "notes": "HbA1c 7.8%, on insulin"
+      },
+      {
+        "condition": "Hypertension",
+        "diagnosed": "2010-06-15",
+        "status": "Active",
+        "notes": "Target BP <130/80 per KDIGO guidelines"
+      }
+    ],
+    "past_surgeries": [
+      {
+        "procedure": "AV fistula creation (left forearm)",
+        "date": "2023-11-20",
+        "indication": "Pre-dialysis vascular access"
+      }
+    ],
+    "past_hospitalizations": [
+      {
+        "reason": "Acute kidney injury on CKD",
+        "date": "2023-06-05",
+        "duration_days": 5
+      }
+    ],
+    "problem_list": [
+      "CKD Stage 4 (pre-dialysis)",
+      "Type 2 Diabetes with complications",
+      "Hypertension",
+      "Diabetic retinopathy",
+      "Peripheral neuropathy",
+      "Suspected renal artery stenosis"
+    ],
+    "family_history": [
+      {
+        "relation": "Father",
+        "condition": "End-stage renal disease",
+        "age_at_onset": 60
+      },
+      {
+        "relation": "Mother",
+        "condition": "Type 2 Diabetes",
+        "age_at_onset": 40
+      },
+      {
+        "relation": "Brother",
+        "condition": "CKD Stage 3",
+        "age_at_onset": 50
+      }
+    ],
+    "social_history": {
+      "living_situation": "Lives with husband and adult daughter",
+      "exercise": "Limited due to neuropathy, gentle walking",
+      "diet": "Renal diet (low potassium, low phosphate, protein-restricted)"
+    },
+    "vaccination_history": [
+      {
+        "vaccine": "Influenza",
+        "date": "2023-10-15"
+      },
+      {
+        "vaccine": "Hepatitis B (3-dose series)",
+        "date": "2023-08-01"
+      },
+      {
+        "vaccine": "Pneumococcal (PCV20)",
+        "date": "2023-03-10"
+      }
+    ],
+    "smoking_status": "Never smoker",
+    "alcohol_use": "None",
+    "drug_use": "None",
+    "occupation": "Retired accountant",
+    "pregnancy_history": {
+      "gravida": 4,
+      "para": 3,
+      "notes": "Last pregnancy age 35, menopause age 50, no gestational complications"
+    }
+  },
+  "allergies": [
+    {
+      "allergy_substance": "ACE inhibitors (Enalapril)",
+      "allergy_type": "Drug",
+      "reaction": "Angioedema",
+      "severity": "Severe"
+    },
+    {
+      "allergy_substance": "Iodinated contrast media",
+      "allergy_type": "Drug",
+      "reaction": "Acute kidney injury (contrast-induced nephropathy)",
+      "severity": "Severe"
+    }
+  ],
+  "medications": [
+    {
+      "medication_name": "Insulin glargine",
+      "medication_code": "RxNorm:274783",
+      "dose": "28",
+      "dose_unit": "units",
+      "route": "Subcutaneous",
+      "frequency": "Once daily at bedtime",
+      "adherence_notes": "Good adherence"
+    },
+    {
+      "medication_name": "Insulin lispro",
+      "medication_code": "RxNorm:86009",
+      "dose": "6-10",
+      "dose_unit": "units",
+      "route": "Subcutaneous",
+      "frequency": "Three times daily with meals",
+      "adherence_notes": "Adjusts based on carb counting"
+    },
+    {
+      "medication_name": "Amlodipine",
+      "medication_code": "RxNorm:17767",
+      "dose": "10",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence"
+    },
+    {
+      "medication_name": "Losartan",
+      "medication_code": "RxNorm:52175",
+      "dose": "100",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence, renoprotective"
+    },
+    {
+      "medication_name": "Sodium bicarbonate",
+      "medication_code": "RxNorm:9863",
+      "dose": "500",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Three times daily",
+      "adherence_notes": "For metabolic acidosis"
+    },
+    {
+      "medication_name": "Erythropoietin (Epoetin alfa)",
+      "medication_code": "RxNorm:3637",
+      "dose": "4000",
+      "dose_unit": "units",
+      "route": "Subcutaneous",
+      "frequency": "Once weekly",
+      "adherence_notes": "Administered at nephrology clinic"
+    }
+  ],
+  "vital_signs": {
+    "blood_pressure_systolic": 148,
+    "blood_pressure_diastolic": 92,
+    "heart_rate": 80,
+    "respiratory_rate": 18,
+    "temperature": 36.5,
+    "spo2": 97,
+    "weight": 78,
+    "height": 158,
+    "bmi": 31.2
+  },
+  "lab_results": [
+    {
+      "test": "eGFR",
+      "value": 22,
+      "unit": "mL/min/1.73m²",
+      "date": "2024-02-01",
+      "reference_range": ">60",
+      "flag": "LOW"
+    },
+    {
+      "test": "Serum Creatinine",
+      "value": 2.6,
+      "unit": "mg/dL",
+      "date": "2024-02-01",
+      "reference_range": "0.6-1.1",
+      "flag": "HIGH"
+    },
+    {
+      "test": "Potassium",
+      "value": 5.4,
+      "unit": "mEq/L",
+      "date": "2024-02-01",
+      "reference_range": "3.5-5.0",
+      "flag": "HIGH"
+    },
+    {
+      "test": "Phosphate",
+      "value": 5.8,
+      "unit": "mg/dL",
+      "date": "2024-02-01",
+      "reference_range": "2.5-4.5",
+      "flag": "HIGH"
+    },
+    {
+      "test": "HbA1c",
+      "value": 7.8,
+      "unit": "%",
+      "date": "2024-01-15",
+      "reference_range": "<7.0",
+      "flag": "HIGH"
+    },
+    {
+      "test": "Hemoglobin",
+      "value": 9.8,
+      "unit": "g/dL",
+      "date": "2024-02-01",
+      "reference_range": "12.0-16.0",
+      "flag": "LOW"
+    },
+    {
+      "test": "Bicarbonate",
+      "value": 18,
+      "unit": "mEq/L",
+      "date": "2024-02-01",
+      "reference_range": "22-28",
+      "flag": "LOW"
+    }
+  ]
+}

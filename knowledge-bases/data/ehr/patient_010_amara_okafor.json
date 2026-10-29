@@ -1,0 +1,205 @@
+{
+  "patient_id": "010",
+  "patient_name": "Amara Okafor",
+  "mrn": "MRN-2024-00010",
+  "chart_number": "CHT-UK-010",
+  "first_name": "Amara",
+  "last_name": "Okafor",
+  "date_of_birth": "2010-05-12",
+  "sex_at_birth": "Female",
+  "gender_identity": "Female",
+  "race": "Black or African American",
+  "ethnicity": "Nigerian British",
+  "medical_history": {
+    "past_diagnoses": [
+      "Sickle cell disease (HbSS)",
+      "Recurrent vaso-occlusive crises",
+      "Avascular necrosis of left femoral head"
+    ],
+    "chronic_conditions": [
+      {
+        "condition": "Sickle cell disease (HbSS)",
+        "diagnosed": "2010-08-01",
+        "status": "Active",
+        "notes": "On hydroxyurea, 3-4 crises per year"
+      }
+    ],
+    "past_surgeries": [],
+    "past_hospitalizations": [
+      {
+        "reason": "Vaso-occlusive crisis",
+        "date": "2023-12-10",
+        "duration_days": 4
+      },
+      {
+        "reason": "Acute chest syndrome",
+        "date": "2023-06-20",
+        "duration_days": 7
+      }
+    ],
+    "problem_list": [
+      "Sickle cell disease (HbSS)",
+      "Acute abdominal pain (? splenic sequestration)",
+      "Avascular necrosis left hip",
+      "Iron overload from transfusions"
+    ],
+    "family_history": [
+      {
+        "relation": "Father",
+        "condition": "Sickle cell trait (HbAS)",
+        "age_at_onset": null
+      },
+      {
+        "relation": "Mother",
+        "condition": "Sickle cell trait (HbAS)",
+        "age_at_onset": null
+      },
+      {
+        "relation": "Brother",
+        "condition": "Sickle cell disease (HbSS)",
+        "age_at_onset": 0
+      }
+    ],
+    "social_history": {
+      "living_situation": "Lives with both parents and brother",
+      "school": "Year 9, secondary school",
+      "activities": "Art, reading (limited sports due to SCD)"
+    },
+    "vaccination_history": [
+      {
+        "vaccine": "Influenza",
+        "date": "2023-10-15"
+      },
+      {
+        "vaccine": "Pneumococcal (PCV13 + PPSV23)",
+        "date": "2023-01-10"
+      },
+      {
+        "vaccine": "Meningococcal ACWY",
+        "date": "2022-09-01"
+      },
+      {
+        "vaccine": "Hepatitis B",
+        "date": "2020-03-15"
+      }
+    ],
+    "smoking_status": "Not applicable (pediatric)",
+    "alcohol_use": "Not applicable (pediatric)",
+    "drug_use": "Not applicable (pediatric)",
+    "occupation": "Student",
+    "pregnancy_history": {
+      "gravida": 0,
+      "para": 0,
+      "menarche_age": 12,
+      "pregnancy_status": "Not pregnant",
+      "notes": "Pre-menarchal counseling completed"
+    }
+  },
+  "allergies": [
+    {
+      "allergy_substance": "Morphine",
+      "allergy_type": "Drug",
+      "reaction": "Severe pruritus",
+      "severity": "Moderate"
+    }
+  ],
+  "medications": [
+    {
+      "medication_name": "Hydroxyurea",
+      "medication_code": "RxNorm:5640",
+      "dose": "500",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence, HbF 18%"
+    },
+    {
+      "medication_name": "Folic acid",
+      "medication_code": "RxNorm:4511",
+      "dose": "5",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence"
+    },
+    {
+      "medication_name": "Penicillin V",
+      "medication_code": "RxNorm:7984",
+      "dose": "250",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Twice daily",
+      "adherence_notes": "Prophylactic, good adherence"
+    },
+    {
+      "medication_name": "Deferasirox",
+      "medication_code": "RxNorm:321988",
+      "dose": "20",
+      "dose_unit": "mg/kg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Iron chelation, moderate adherence"
+    }
+  ],
+  "vital_signs": {
+    "blood_pressure_systolic": 108,
+    "blood_pressure_diastolic": 65,
+    "heart_rate": 105,
+    "respiratory_rate": 22,
+    "temperature": 37.8,
+    "spo2": 95,
+    "weight": 42,
+    "height": 155,
+    "bmi": 17.5
+  },
+  "lab_results": [
+    {
+      "test": "Hemoglobin",
+      "value": 7.2,
+      "unit": "g/dL",
+      "date": "2024-02-08",
+      "reference_range": "11.5-14.5",
+      "flag": "LOW"
+    },
+    {
+      "test": "Reticulocyte count",
+      "value": 12.5,
+      "unit": "%",
+      "date": "2024-02-08",
+      "reference_range": "0.5-2.5",
+      "flag": "HIGH"
+    },
+    {
+      "test": "LDH",
+      "value": 580,
+      "unit": "U/L",
+      "date": "2024-02-08",
+      "reference_range": "120-246",
+      "flag": "HIGH"
+    },
+    {
+      "test": "Bilirubin (total)",
+      "value": 3.8,
+      "unit": "mg/dL",
+      "date": "2024-02-08",
+      "reference_range": "0.1-1.2",
+      "flag": "HIGH"
+    },
+    {
+      "test": "Ferritin",
+      "value": 1850,
+      "unit": "ng/mL",
+      "date": "2024-01-15",
+      "reference_range": "12-150",
+      "flag": "HIGH"
+    },
+    {
+      "test": "eGFR",
+      "value": 125,
+      "unit": "mL/min/1.73m²",
+      "date": "2024-02-08",
+      "reference_range": ">60",
+      "flag": "NORMAL"
+    }
+  ]
+}

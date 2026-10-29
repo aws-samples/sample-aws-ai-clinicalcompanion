@@ -1,0 +1,204 @@
+{
+  "patient_id": "012",
+  "patient_name": "Elena Volkov",
+  "mrn": "MRN-2024-00012",
+  "chart_number": "CHT-US-012",
+  "first_name": "Elena",
+  "last_name": "Volkov",
+  "date_of_birth": "1982-03-28",
+  "sex_at_birth": "Male",
+  "gender_identity": "Transgender woman",
+  "race": "White",
+  "ethnicity": "Eastern European (Russian American)",
+  "medical_history": {
+    "past_diagnoses": [
+      "Gender dysphoria (on hormone therapy since 2015)",
+      "Deep vein thrombosis (left leg, 2022)",
+      "Anxiety disorder",
+      "Migraine with aura"
+    ],
+    "chronic_conditions": [
+      {
+        "condition": "Gender dysphoria",
+        "diagnosed": "2014-01-15",
+        "status": "Active (on HRT)",
+        "notes": "Estradiol + spironolactone since 2015, stable"
+      },
+      {
+        "condition": "History of DVT",
+        "diagnosed": "2022-04-10",
+        "status": "Resolved",
+        "notes": "Left popliteal DVT, completed 6 months anticoagulation. Estrogen-related risk factor."
+      },
+      {
+        "condition": "Migraine with aura",
+        "diagnosed": "2018-06-20",
+        "status": "Active",
+        "notes": "2-3 episodes per month, managed with triptans"
+      }
+    ],
+    "past_surgeries": [
+      {
+        "procedure": "Breast augmentation",
+        "date": "2019-11-15",
+        "indication": "Gender-affirming surgery"
+      }
+    ],
+    "past_hospitalizations": [
+      {
+        "reason": "Deep vein thrombosis",
+        "date": "2022-04-10",
+        "duration_days": 3
+      }
+    ],
+    "problem_list": [
+      "Acute left calf pain and swelling (? recurrent DVT)",
+      "Shortness of breath (? PE)",
+      "History of DVT on estrogen therapy",
+      "Migraine with aura",
+      "Anxiety disorder"
+    ],
+    "family_history": [
+      {
+        "relation": "Mother",
+        "condition": "Factor V Leiden (heterozygous)",
+        "age_at_onset": null
+      },
+      {
+        "relation": "Father",
+        "condition": "Hypertension",
+        "age_at_onset": 50
+      }
+    ],
+    "social_history": {
+      "living_situation": "Lives alone with cat",
+      "exercise": "Pilates 3x/week, cycling",
+      "diet": "Vegetarian"
+    },
+    "vaccination_history": [
+      {
+        "vaccine": "Influenza",
+        "date": "2023-10-05"
+      },
+      {
+        "vaccine": "COVID-19 booster",
+        "date": "2023-09-10"
+      },
+      {
+        "vaccine": "HPV (completed series)",
+        "date": "2016-03-01"
+      }
+    ],
+    "smoking_status": "Never smoker",
+    "alcohol_use": "Social (1-2 drinks per week)",
+    "drug_use": "None",
+    "occupation": "Graphic designer"
+  },
+  "allergies": [
+    {
+      "allergy_substance": "Aspirin",
+      "allergy_type": "Drug",
+      "reaction": "Bronchospasm",
+      "severity": "Severe"
+    }
+  ],
+  "medications": [
+    {
+      "medication_name": "Estradiol valerate",
+      "medication_code": "RxNorm:4099",
+      "dose": "4",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence, monitored by endocrinologist"
+    },
+    {
+      "medication_name": "Spironolactone",
+      "medication_code": "RxNorm:9997",
+      "dose": "100",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence"
+    },
+    {
+      "medication_name": "Sumatriptan",
+      "medication_code": "RxNorm:37418",
+      "dose": "50",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "As needed for migraine",
+      "adherence_notes": "Uses 2-3 times per month"
+    },
+    {
+      "medication_name": "Sertraline",
+      "medication_code": "RxNorm:36437",
+      "dose": "100",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence"
+    }
+  ],
+  "vital_signs": {
+    "blood_pressure_systolic": 124,
+    "blood_pressure_diastolic": 78,
+    "heart_rate": 92,
+    "respiratory_rate": 20,
+    "temperature": 37.0,
+    "spo2": 96,
+    "weight": 72,
+    "height": 178,
+    "bmi": 22.7
+  },
+  "lab_results": [
+    {
+      "test": "D-dimer",
+      "value": 1.8,
+      "unit": "mg/L FEU",
+      "date": "2024-02-10",
+      "reference_range": "<0.5",
+      "flag": "HIGH"
+    },
+    {
+      "test": "eGFR",
+      "value": 105,
+      "unit": "mL/min/1.73m²",
+      "date": "2024-02-10",
+      "reference_range": ">60",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "Estradiol",
+      "value": 180,
+      "unit": "pg/mL",
+      "date": "2024-01-20",
+      "reference_range": "100-200 (target for HRT)",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "Testosterone",
+      "value": 25,
+      "unit": "ng/dL",
+      "date": "2024-01-20",
+      "reference_range": "<50 (target for HRT)",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "Hemoglobin",
+      "value": 13.5,
+      "unit": "g/dL",
+      "date": "2024-02-10",
+      "reference_range": "12.0-16.0",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "Platelets",
+      "value": 265,
+      "unit": "x10^9/L",
+      "date": "2024-02-10",
+      "reference_range": "150-400",
+      "flag": "NORMAL"
+    }
+  ]
+}

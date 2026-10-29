@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClinicalCompass</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/panel.css">
+  <link rel="stylesheet" href="css/agui.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+  <!-- ═══ Login Screen ═══ -->
+  <div id="login-screen" class="login-screen">
+    <div class="login-card">
+      <div class="login-header">
+        <div class="login-icon">🏥</div>
+        <h1>ClinicalCompass</h1>
+        <p>Clinical Decision Support System</p>
+      </div>
+      <form id="login-form" autocomplete="on">
+        <div class="login-field">
+          <label for="login-username">Username</label>
+          <input id="login-username" type="text" autocomplete="username" placeholder="Enter your username" required>
+        </div>
+        <div class="login-field">
+          <label for="login-password">Password</label>
+          <input id="login-password" type="password" autocomplete="current-password" placeholder="Enter your password" required>
+        </div>
+        <div id="login-error" class="login-error" role="alert"></div>
+        <button id="login-btn" type="submit" class="login-btn">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ═══ Main App (hidden until authenticated) ═══ -->
+  <div id="app-container" class="container" style="display:none;">
+    <header class="header">
+      <h1>ClinicalCompass</h1>
+      <div class="header-right">
+        <div class="connection-status">
+          <span class="status-dot" id="statusDot"></span>
+          <span class="status-text" id="statusText">Disconnected</span>
+        </div>
+        <div class="user-info">
+          <span id="user-display"></span>
+          <button id="logout-btn" type="button" class="logout-btn" title="Sign out">Sign out</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="app-layout">
+      <!-- Left Sidebar: Patient Context Pane -->
+      <aside class="left-sidebar" aria-label="Patient context">
+        <div class="sidebar-header">
+          <h2>Patient Context</h2>
+        </div>
+        <div id="patient-context-pane" class="patient-context-pane">
+          <p class="patient-context-empty">No patient selected</p>
+        </div>
+      </aside>
+
+      <!-- Main Content: Chat Area -->
+      <main class="main-content">
+        <div id="chat-messages" class="chat-messages">
+          <div class="welcome-message">
+            <div class="welcome-icon">🏥</div>
+            <h2>Clinical Decision Support</h2>
+            <p>Ask a clinical question to get evidence-based recommendations from international guidelines.</p>
+          </div>
+        </div>
+
+        <div class="input-bar">
+          <div class="input-bar-inner">
+            <div class="patient-id-row">
+              <label for="patient-selector">Patient</label>
+              <div class="patient-selector-wrapper" id="patient-selector-wrapper">
+                <input id="patient-selector" type="text" placeholder="Search patient by name or ID…" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="patient-selector-list" aria-autocomplete="list">
+                <ul id="patient-selector-list" class="patient-selector-list" role="listbox" aria-label="Patient list"></ul>
+                <input id="patient-id" type="hidden">
+              </div>
+            </div>
+            <div class="guideline-selector-row">
+              <label for="guideline-selector">Guidelines</label>
+              <div class="guideline-selector-wrapper" id="guideline-selector-wrapper">
+                <button id="guideline-selector" type="button" class="guideline-selector-toggle" aria-haspopup="listbox" aria-expanded="false" aria-controls="guideline-selector-list">
+                  <span class="guideline-selector-text">All guidelines</span>
+                  <svg class="guideline-selector-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 5 6 8 9 5"/></svg>
+                </button>
+                <ul id="guideline-selector-list" class="guideline-selector-list" role="listbox" aria-label="Guideline sources" aria-multiselectable="true"></ul>
+              </div>
+            </div>
+            <div class="query-row">
+              <textarea id="clinical-question" rows="3" placeholder="Ask a clinical question…" aria-label="Clinical question"></textarea>
+              <button id="submit-btn" type="button" class="send-btn" aria-busy="false" title="Send query">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </div>
+            <div id="form-error" class="form-error" role="alert"></div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Right Citation Panel -->
+      <aside id="right-citation-panel"
+             class="right-citation-panel right-panel"
+             role="complementary"
+             aria-label="Sources and Citations">
+        <div class="right-panel-header">
+          <button id="citation-panel-toggle"
+                  class="panel-toggle-btn"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="right-citation-panel"
+                  title="Toggle Citations">
+            <span class="toggle-icon">📚</span>
+            <span class="toggle-label">Citations</span>
+          </button>
+        </div>
+        <div id="right-citation-content" class="right-panel-content">
+          <p class="citation-panel-empty">No citations available</p>
+        </div>
+      </aside>
+
+      <!-- Right Trail Panel -->
+      <aside id="right-trail-panel"
+             class="right-trail-panel right-panel"
+             role="complementary"
+             aria-label="Decision Trail">
+        <div class="right-panel-header">
+          <button id="trail-panel-toggle"
+                  class="panel-toggle-btn"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="right-trail-panel"
+                  title="Toggle Decision Trail">
+            <span class="toggle-icon">🔍</span>
+            <span class="toggle-label">Trail</span>
+          </button>
+        </div>
+        <div id="right-trail-content" class="right-panel-content">
+          <p class="trail-panel-empty">No decision trail available. Submit a query to see the agent reasoning.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script src="lib/marked.min.js" integrity="sha384-zbcZAIxlvJtNE3Dp5nxLXdXtXyxwOdnILY1TDPVmKFhl4r4nSUG1r8bcFXGVa4Te" crossorigin="anonymous"></script>
+  <script src="lib/purify.min.js" integrity="sha384-P0JNneQf81HOl9VwNXK76cQ9VMD6Nfsnepxb0cCOg8+UzEdzgPHAPV4wVQrvYQSx" crossorigin="anonymous"></script>
+  <script src="config.js?v=3"></script>
+  <script src="js/auth.js?v=2"></script>
+  <script src="lib/AGUIEventHandler.js?v=2"></script>
+  <script src="lib/ClinicalCompassWebSocket.js?v=8"></script>
+  <script src="js/app.js?v=34"></script>
+</body>
+</html>

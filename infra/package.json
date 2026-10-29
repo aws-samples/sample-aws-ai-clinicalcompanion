@@ -1,0 +1,30 @@
+{
+  "name": "clinicalcompass-infra",
+  "version": "1.0.0",
+  "bin": {
+    "infra": "bin/app.ts"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "cdk": "cdk",
+    "synth": "cdk synth",
+    "deploy": "cdk deploy --all",
+    "diff": "cdk diff",
+    "destroy": "cdk destroy --all"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.0.0",
+    "aws-cdk": "^2.1135.1",
+    "jest": "^30.4.2",
+    "ts-jest": "^29.4.12",
+    "typescript": "~5.7.0"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-bedrock-agentcore-alpha": "^2.248.0-alpha.0",
+    "@cdklabs/generative-ai-cdk-constructs": "^0.1.0",
+    "aws-cdk-lib": "^2.263.0",
+    "constructs": "^10.0.0"
+  }
+}

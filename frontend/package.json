@@ -1,0 +1,14 @@
+{
+  "name": "clinical-compass-frontend-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Test infrastructure for ClinicalCompass frontend property-based tests",
+  "scripts": {
+    "test": "node tests/test_agui_properties.js",
+    "test:unit": "node lib/AGUIEventHandler.test.js",
+    "test:websocket": "node lib/ClinicalCompassWebSocket.test.js"
+  },
+  "devDependencies": {
+    "fast-check": "3.22.0"
+  }
+}

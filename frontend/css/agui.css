@@ -1,0 +1,361 @@
+/**
+ * ClinicalCompass AG-UI Protocol Styles
+ *
+ * Styles for the AG-UI event-driven progress display:
+ * step indicators, tool badges, reasoning section,
+ * streaming recommendation area, and error states.
+ */
+
+/* ── AG-UI Message Container ── */
+.agui-message {
+  align-self: flex-start;
+  max-width: 95%;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* ── Progress Container (vertical timeline) ── */
+.agui-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 12px;
+  padding: 12px 0;
+  border-left: 2px solid #e5e7eb;
+  margin-left: 8px;
+}
+
+.agui-progress--complete {
+  border-left-color: #10b981;
+}
+
+/* ── Step Items ── */
+.agui-step {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 12px;
+  margin-left: -9px;
+  position: relative;
+  font-size: 13px;
+  line-height: 1.4;
+  transition: background 0.2s ease;
+}
+
+.agui-step--running {
+  color: #0369a1;
+}
+
+.agui-step--completed {
+  color: #065f46;
+}
+
+.agui-step--error {
+  color: #991b1b;
+}
+
+/* ── Step Icon (spinner / checkmark / error) ── */
+.agui-step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.agui-step--running .agui-step-icon {
+  background: #e0f2fe;
+  color: #0ea5e9;
+}
+
+.agui-step--completed .agui-step-icon {
+  background: #d1fae5;
+  color: #10b981;
+}
+
+.agui-step--error .agui-step-icon {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+/* ── Step Label ── */
+.agui-step-label {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Step Error Message ── */
+.agui-step-error {
+  width: 100%;
+  margin-top: 4px;
+  margin-left: 26px;
+  padding: 4px 8px;
+  font-size: 12px;
+  color: #991b1b;
+  background: #fee2e2;
+  border-radius: 4px;
+  border-left: 2px solid #ef4444;
+}
+
+/* ── CSS-Only Spinner ── */
+.agui-spinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #bae6fd;
+  border-top-color: #0ea5e9;
+  border-radius: 50%;
+  animation: agui-spin 0.7s linear infinite;
+}
+
+@keyframes agui-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── Tool Badges Container ── */
+.agui-tool-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  width: 100%;
+  margin-top: 4px;
+  margin-left: 26px;
+}
+
+/* ── Individual Tool Badge (pill shape) ── */
+.agui-tool-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 10px;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.agui-tool-badge--running {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.agui-tool-badge--completed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+/* ── Reasoning Section (collapsible <details>) ── */
+.agui-reasoning {
+  margin: 8px 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+  overflow: hidden;
+}
+
+.agui-reasoning-summary {
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+
+.agui-reasoning-summary::-webkit-details-marker {
+  display: none;
+}
+
+.agui-reasoning-summary::before {
+  content: '▶';
+  display: inline-block;
+  margin-right: 6px;
+  font-size: 10px;
+  transition: transform 0.2s ease;
+}
+
+.agui-reasoning[open] .agui-reasoning-summary::before {
+  transform: rotate(90deg);
+}
+
+.agui-reasoning-content {
+  padding: 8px 12px 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #4b5563;
+  border-top: 1px solid #e5e7eb;
+  max-height: 200px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* ── Recommendation Area (most prominent) ── */
+.agui-recommendation {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #1f2937;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  min-height: 40px;
+}
+
+.agui-recommendation:empty {
+  display: none;
+}
+
+/* Markdown content inside recommendation */
+.agui-recommendation h1,
+.agui-recommendation h2,
+.agui-recommendation h3,
+.agui-recommendation h4 {
+  color: #1f2937;
+  font-weight: 600;
+  margin-top: 16px;
+  margin-bottom: 6px;
+}
+
+.agui-recommendation h1 { font-size: 16px; }
+.agui-recommendation h2 { font-size: 14px; }
+.agui-recommendation h3 { font-size: 13px; }
+.agui-recommendation p { margin-bottom: 10px; }
+.agui-recommendation p:last-child { margin-bottom: 0; }
+.agui-recommendation ul,
+.agui-recommendation ol { margin-left: 20px; margin-bottom: 10px; }
+.agui-recommendation li { margin-bottom: 3px; }
+.agui-recommendation strong { font-weight: 600; }
+
+.agui-recommendation code {
+  background: #f3f4f6;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 13px;
+}
+
+.agui-recommendation blockquote {
+  border-left: 3px solid #667eea;
+  padding: 6px 14px;
+  margin: 10px 0;
+  background: #f5f3ff;
+  border-radius: 4px;
+  color: #4b5563;
+}
+
+/* ── Error State for Recommendation ── */
+.agui-recommendation--error {
+  color: #991b1b;
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+/* ── Timeout Warning ── */
+.agui-timeout-warning {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #92400e;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+}
+
+.agui-timeout-warning::before {
+  content: '⚠';
+  font-size: 14px;
+}
+
+/* ── Connection Lost / Reconnection Notifications ── */
+.agui-connection-lost {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #991b1b;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  animation: agui-pulse 1.5s ease-in-out infinite;
+}
+
+.agui-connection-lost::before {
+  content: '⚡';
+  font-size: 14px;
+}
+
+.agui-connection-restored {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #065f46;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+}
+
+.agui-connection-restored::before {
+  content: '↻';
+  font-size: 14px;
+}
+
+.agui-connection-failed {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #92400e;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+}
+
+.agui-connection-failed::before {
+  content: '⚠';
+  font-size: 14px;
+}
+
+/* ── Interrupted Step State ── */
+.agui-step--interrupted {
+  color: #92400e;
+}
+
+.agui-step--interrupted .agui-step-icon {
+  background: #fffbeb;
+  color: #f59e0b;
+}
+
+/* ── Interrupted Progress Container ── */
+.agui-progress--interrupted {
+  border-left-color: #f59e0b;
+}
+
+/* ── Pulse animation for connection lost ── */
+@keyframes agui-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}

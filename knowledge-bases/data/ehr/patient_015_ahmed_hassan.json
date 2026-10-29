@@ -1,0 +1,142 @@
+{
+  "patient_id": "015",
+  "patient_name": "Ahmed Hassan",
+  "mrn": "MRN-2024-00015",
+  "chart_number": "CHT-UK-015",
+  "first_name": "Ahmed",
+  "last_name": "Hassan",
+  "date_of_birth": "2021-06-15",
+  "sex_at_birth": "Male",
+  "gender_identity": "Male",
+  "race": "Middle Eastern",
+  "ethnicity": "Egyptian British",
+  "medical_history": {
+    "past_diagnoses": [
+      "Febrile seizure (simple, age 18 months)",
+      "Recurrent otitis media"
+    ],
+    "chronic_conditions": [],
+    "past_surgeries": [
+      {
+        "procedure": "Bilateral myringotomy with tubes",
+        "date": "2023-03-10",
+        "indication": "Recurrent otitis media with effusion"
+      }
+    ],
+    "past_hospitalizations": [
+      {
+        "reason": "Febrile seizure",
+        "date": "2022-12-20",
+        "duration_days": 1
+      }
+    ],
+    "problem_list": [
+      "Fever (39.5°C) with new seizure episode",
+      "History of febrile seizure",
+      "Recurrent otitis media (resolved post-tubes)"
+    ],
+    "family_history": [
+      {
+        "relation": "Father",
+        "condition": "Febrile seizures (childhood)",
+        "age_at_onset": 2
+      },
+      {
+        "relation": "Mother",
+        "condition": "Healthy",
+        "age_at_onset": null
+      }
+    ],
+    "social_history": {
+      "living_situation": "Lives with both parents",
+      "school": "Nursery/daycare",
+      "activities": "Age-appropriate play"
+    },
+    "vaccination_history": [
+      {
+        "vaccine": "DTaP/IPV/Hib (primary series)",
+        "date": "2022-02-15"
+      },
+      {
+        "vaccine": "MMR (1st dose)",
+        "date": "2022-06-15"
+      },
+      {
+        "vaccine": "PCV13 (primary series)",
+        "date": "2022-02-15"
+      },
+      {
+        "vaccine": "Influenza",
+        "date": "2023-10-15"
+      }
+    ],
+    "smoking_status": "Not applicable (pediatric)",
+    "alcohol_use": "Not applicable (pediatric)",
+    "drug_use": "Not applicable (pediatric)",
+    "occupation": "Not applicable (toddler)"
+  },
+  "allergies": [
+    {
+      "allergy_substance": "Egg",
+      "allergy_type": "Food",
+      "reaction": "Facial swelling, urticaria",
+      "severity": "Moderate"
+    }
+  ],
+  "medications": [
+    {
+      "medication_name": "Paracetamol (Acetaminophen)",
+      "medication_code": "RxNorm:161",
+      "dose": "15",
+      "dose_unit": "mg/kg",
+      "route": "Oral",
+      "frequency": "Every 4-6 hours as needed",
+      "adherence_notes": "Weight-based dosing: 180mg per dose"
+    }
+  ],
+  "vital_signs": {
+    "blood_pressure_systolic": 90,
+    "blood_pressure_diastolic": 55,
+    "heart_rate": 135,
+    "respiratory_rate": 28,
+    "temperature": 39.5,
+    "spo2": 98,
+    "weight": 12,
+    "height": 90,
+    "bmi": 14.8
+  },
+  "lab_results": [
+    {
+      "test": "WBC",
+      "value": 15.8,
+      "unit": "x10^9/L",
+      "date": "2024-02-10",
+      "reference_range": "6.0-17.0 (age-adjusted)",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "CRP",
+      "value": 35,
+      "unit": "mg/L",
+      "date": "2024-02-10",
+      "reference_range": "<5",
+      "flag": "HIGH"
+    },
+    {
+      "test": "Glucose",
+      "value": 5.2,
+      "unit": "mmol/L",
+      "date": "2024-02-10",
+      "reference_range": "3.3-5.5",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "Sodium",
+      "value": 138,
+      "unit": "mEq/L",
+      "date": "2024-02-10",
+      "reference_range": "136-145",
+      "flag": "NORMAL"
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "patient_id": "011",
+  "patient_name": "David Nakamura",
+  "mrn": "MRN-2024-00011",
+  "chart_number": "CHT-US-011",
+  "first_name": "David",
+  "last_name": "Nakamura",
+  "date_of_birth": "1972-09-14",
+  "sex_at_birth": "Male",
+  "gender_identity": "Male",
+  "race": "Native Hawaiian or Pacific Islander",
+  "ethnicity": "Hawaiian",
+  "medical_history": {
+    "past_diagnoses": [
+      "Type 2 Diabetes Mellitus",
+      "Obstructive sleep apnea",
+      "Gout",
+      "Non-alcoholic fatty liver disease"
+    ],
+    "chronic_conditions": [
+      {
+        "condition": "Type 2 Diabetes Mellitus",
+        "diagnosed": "2018-05-20",
+        "status": "Active",
+        "notes": "HbA1c 7.5%, on dual oral therapy"
+      },
+      {
+        "condition": "Obstructive sleep apnea",
+        "diagnosed": "2020-01-10",
+        "status": "Active",
+        "notes": "AHI 28, on CPAP nightly"
+      },
+      {
+        "condition": "Non-alcoholic fatty liver disease",
+        "diagnosed": "2021-06-15",
+        "status": "Active",
+        "notes": "Mild steatosis on ultrasound, ALT mildly elevated"
+      }
+    ],
+    "past_surgeries": [],
+    "past_hospitalizations": [
+      {
+        "reason": "Acute gout flare (right knee)",
+        "date": "2022-08-10",
+        "duration_days": 2
+      }
+    ],
+    "problem_list": [
+      "Type 2 Diabetes Mellitus",
+      "Obesity (BMI 38)",
+      "Obstructive sleep apnea",
+      "NAFLD",
+      "Gout",
+      "Chest pain (atypical) - needs cardiac workup"
+    ],
+    "family_history": [
+      {
+        "relation": "Father",
+        "condition": "Type 2 Diabetes",
+        "age_at_onset": 45
+      },
+      {
+        "relation": "Mother",
+        "condition": "Stroke",
+        "age_at_onset": 62
+      },
+      {
+        "relation": "Brother",
+        "condition": "Gout",
+        "age_at_onset": 40
+      }
+    ],
+    "social_history": {
+      "living_situation": "Lives with wife and 2 teenage children",
+      "exercise": "Minimal, trying to increase activity",
+      "diet": "High-carbohydrate traditional diet, working with dietitian"
+    },
+    "vaccination_history": [
+      {
+        "vaccine": "Influenza",
+        "date": "2023-10-20"
+      },
+      {
+        "vaccine": "COVID-19 booster",
+        "date": "2023-09-15"
+      },
+      {
+        "vaccine": "Hepatitis B",
+        "date": "2019-06-01"
+      }
+    ],
+    "smoking_status": "Never smoker",
+    "alcohol_use": "Moderate (3-4 beers per week)",
+    "drug_use": "None",
+    "occupation": "Hotel manager"
+  },
+  "allergies": [
+    {
+      "allergy_substance": "Allopurinol",
+      "allergy_type": "Drug",
+      "reaction": "Stevens-Johnson syndrome",
+      "severity": "Severe"
+    }
+  ],
+  "medications": [
+    {
+      "medication_name": "Metformin",
+      "medication_code": "RxNorm:6809",
+      "dose": "1000",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Twice daily",
+      "adherence_notes": "Good adherence"
+    },
+    {
+      "medication_name": "Empagliflozin",
+      "medication_code": "RxNorm:1545653",
+      "dose": "25",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence, added for cardiorenal benefit"
+    },
+    {
+      "medication_name": "Febuxostat",
+      "medication_code": "RxNorm:790257",
+      "dose": "40",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence (allopurinol allergy)"
+    },
+    {
+      "medication_name": "Losartan",
+      "medication_code": "RxNorm:52175",
+      "dose": "50",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence"
+    }
+  ],
+  "vital_signs": {
+    "blood_pressure_systolic": 138,
+    "blood_pressure_diastolic": 86,
+    "heart_rate": 78,
+    "respiratory_rate": 16,
+    "temperature": 36.8,
+    "spo2": 96,
+    "weight": 118,
+    "height": 176,
+    "bmi": 38.1
+  },
+  "lab_results": [
+    {
+      "test": "HbA1c",
+      "value": 7.5,
+      "unit": "%",
+      "date": "2024-01-25",
+      "reference_range": "<7.0",
+      "flag": "HIGH"
+    },
+    {
+      "test": "Uric acid",
+      "value": 7.8,
+      "unit": "mg/dL",
+      "date": "2024-01-25",
+      "reference_range": "3.5-7.2",
+      "flag": "HIGH"
+    },
+    {
+      "test": "ALT",
+      "value": 52,
+      "unit": "U/L",
+      "date": "2024-01-25",
+      "reference_range": "7-56",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "Triglycerides",
+      "value": 245,
+      "unit": "mg/dL",
+      "date": "2024-01-25",
+      "reference_range": "<150",
+      "flag": "HIGH"
+    },
+    {
+      "test": "eGFR",
+      "value": 78,
+      "unit": "mL/min/1.73m²",
+      "date": "2024-01-25",
+      "reference_range": ">60",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "Troponin I",
+      "value": 0.01,
+      "unit": "ng/mL",
+      "date": "2024-02-05",
+      "reference_range": "<0.04",
+      "flag": "NORMAL"
+    }
+  ]
+}

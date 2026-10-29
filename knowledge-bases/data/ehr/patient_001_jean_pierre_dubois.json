@@ -1,0 +1,206 @@
+{
+  "patient_id": "001",
+  "patient_name": "Jean-Pierre Dubois",
+  "mrn": "MRN-2024-00001",
+  "chart_number": "CHT-FR-001",
+  "first_name": "Jean-Pierre",
+  "last_name": "Dubois",
+  "date_of_birth": "1956-03-15",
+  "sex_at_birth": "Male",
+  "gender_identity": "Male",
+  "race": "White",
+  "ethnicity": "French",
+  "medical_history": {
+    "past_diagnoses": [
+      "Prostate cancer (Gleason 7, 2019, in remission)",
+      "Type 2 Diabetes Mellitus",
+      "Hypertension",
+      "Hyperlipidemia",
+      "Chronic Kidney Disease Stage 3B"
+    ],
+    "chronic_conditions": [
+      {
+        "condition": "Chronic Kidney Disease Stage 3B",
+        "diagnosed": "2022-03-20",
+        "status": "Active",
+        "notes": "Baseline eGFR 32-40 mL/min/1.73m²"
+      },
+      {
+        "condition": "Type 2 Diabetes Mellitus",
+        "diagnosed": "2015-06-05",
+        "status": "Active",
+        "notes": "HbA1c 7.2%, on Metformin"
+      },
+      {
+        "condition": "Hypertension",
+        "diagnosed": "2010-11-12",
+        "status": "Active",
+        "notes": "Well controlled on Lisinopril"
+      }
+    ],
+    "past_surgeries": [
+      {
+        "procedure": "Radical prostatectomy",
+        "date": "2019-09-15",
+        "indication": "Prostate cancer Gleason 7"
+      }
+    ],
+    "past_hospitalizations": [
+      {
+        "reason": "Prostate cancer surgery",
+        "date": "2019-09-15",
+        "duration_days": 5
+      }
+    ],
+    "problem_list": [
+      "CKD Stage 3B",
+      "Type 2 Diabetes Mellitus",
+      "Hypertension",
+      "Hyperlipidemia",
+      "Chronic lower back pain",
+      "History of prostate cancer"
+    ],
+    "family_history": [
+      {
+        "relation": "Father",
+        "condition": "Myocardial infarction",
+        "age_at_onset": 62
+      },
+      {
+        "relation": "Mother",
+        "condition": "Type 2 Diabetes",
+        "age_at_onset": 55
+      }
+    ],
+    "social_history": {
+      "living_situation": "Lives with wife",
+      "exercise": "Walks 30 minutes daily",
+      "diet": "Low-sodium, diabetic diet"
+    },
+    "vaccination_history": [
+      {
+        "vaccine": "Influenza",
+        "date": "2023-10-15"
+      },
+      {
+        "vaccine": "COVID-19 booster",
+        "date": "2023-09-20"
+      },
+      {
+        "vaccine": "Pneumococcal (PCV20)",
+        "date": "2022-01-10"
+      }
+    ],
+    "smoking_status": "Former smoker (quit 2005, 20 pack-years)",
+    "alcohol_use": "Occasional (1-2 glasses wine per week)",
+    "drug_use": "None",
+    "occupation": "Retired civil engineer"
+  },
+  "allergies": [
+    {
+      "allergy_substance": "Penicillin",
+      "allergy_type": "Drug",
+      "reaction": "Maculopapular rash",
+      "severity": "Moderate"
+    }
+  ],
+  "medications": [
+    {
+      "medication_name": "Metformin",
+      "medication_code": "RxNorm:6809",
+      "dose": "1000",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Twice daily",
+      "adherence_notes": "Good adherence, must hold 48h before iodinated contrast"
+    },
+    {
+      "medication_name": "Lisinopril",
+      "medication_code": "RxNorm:29046",
+      "dose": "20",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence"
+    },
+    {
+      "medication_name": "Atorvastatin",
+      "medication_code": "RxNorm:83367",
+      "dose": "40",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily at bedtime",
+      "adherence_notes": "Good adherence"
+    },
+    {
+      "medication_name": "Aspirin",
+      "medication_code": "RxNorm:1191",
+      "dose": "81",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence"
+    }
+  ],
+  "vital_signs": {
+    "blood_pressure_systolic": 128,
+    "blood_pressure_diastolic": 78,
+    "heart_rate": 72,
+    "respiratory_rate": 16,
+    "temperature": 36.8,
+    "spo2": 98,
+    "weight": 82,
+    "height": 175,
+    "bmi": 26.8
+  },
+  "lab_results": [
+    {
+      "test": "eGFR",
+      "value": 32,
+      "unit": "mL/min/1.73m²",
+      "date": "2024-02-05",
+      "reference_range": ">60",
+      "flag": "LOW"
+    },
+    {
+      "test": "Serum Creatinine",
+      "value": 1.8,
+      "unit": "mg/dL",
+      "date": "2024-02-05",
+      "reference_range": "0.7-1.3",
+      "flag": "HIGH"
+    },
+    {
+      "test": "BUN",
+      "value": 28,
+      "unit": "mg/dL",
+      "date": "2024-02-05",
+      "reference_range": "7-20",
+      "flag": "HIGH"
+    },
+    {
+      "test": "HbA1c",
+      "value": 7.2,
+      "unit": "%",
+      "date": "2024-02-01",
+      "reference_range": "<7.0",
+      "flag": "HIGH"
+    },
+    {
+      "test": "PSA",
+      "value": 0.2,
+      "unit": "ng/mL",
+      "date": "2024-01-15",
+      "reference_range": "<4.0",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "Potassium",
+      "value": 4.8,
+      "unit": "mEq/L",
+      "date": "2024-02-05",
+      "reference_range": "3.5-5.0",
+      "flag": "NORMAL"
+    }
+  ]
+}

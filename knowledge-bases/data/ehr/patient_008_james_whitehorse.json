@@ -1,0 +1,220 @@
+{
+  "patient_id": "008",
+  "patient_name": "James Whitehorse",
+  "mrn": "MRN-2024-00008",
+  "chart_number": "CHT-US-008",
+  "first_name": "James",
+  "last_name": "Whitehorse",
+  "date_of_birth": "1962-06-21",
+  "sex_at_birth": "Male",
+  "gender_identity": "Male",
+  "race": "American Indian or Alaska Native",
+  "ethnicity": "Navajo",
+  "medical_history": {
+    "past_diagnoses": [
+      "Type 2 Diabetes Mellitus",
+      "Peripheral arterial disease",
+      "Diabetic nephropathy (CKD Stage 3A)",
+      "Non-healing foot ulcer (left)",
+      "Hypertension"
+    ],
+    "chronic_conditions": [
+      {
+        "condition": "Type 2 Diabetes Mellitus",
+        "diagnosed": "2005-04-10",
+        "status": "Active",
+        "notes": "HbA1c 9.2%, poorly controlled, insulin-requiring"
+      },
+      {
+        "condition": "Peripheral arterial disease",
+        "diagnosed": "2022-01-15",
+        "status": "Active",
+        "notes": "ABI 0.6 left, 0.7 right. Claudication at 100m."
+      },
+      {
+        "condition": "CKD Stage 3A",
+        "diagnosed": "2021-08-20",
+        "status": "Active",
+        "notes": "eGFR 48 mL/min/1.73m², diabetic nephropathy"
+      }
+    ],
+    "past_surgeries": [
+      {
+        "procedure": "Debridement of left foot ulcer",
+        "date": "2023-11-05",
+        "indication": "Non-healing diabetic foot ulcer"
+      }
+    ],
+    "past_hospitalizations": [
+      {
+        "reason": "Diabetic foot infection",
+        "date": "2023-11-05",
+        "duration_days": 7
+      }
+    ],
+    "problem_list": [
+      "Poorly controlled T2DM",
+      "Peripheral arterial disease",
+      "CKD Stage 3A (diabetic nephropathy)",
+      "Non-healing left foot ulcer",
+      "Hypertension",
+      "Needs CT angiography for PAD assessment"
+    ],
+    "family_history": [
+      {
+        "relation": "Father",
+        "condition": "Type 2 Diabetes",
+        "age_at_onset": 40
+      },
+      {
+        "relation": "Mother",
+        "condition": "Type 2 Diabetes",
+        "age_at_onset": 38
+      },
+      {
+        "relation": "Brother",
+        "condition": "Below-knee amputation (diabetic)",
+        "age_at_onset": 55
+      }
+    ],
+    "social_history": {
+      "living_situation": "Lives on reservation with extended family",
+      "exercise": "Limited due to claudication and foot ulcer",
+      "diet": "Traditional diet, difficulty accessing diabetic-friendly foods"
+    },
+    "vaccination_history": [
+      {
+        "vaccine": "Influenza",
+        "date": "2023-10-20"
+      },
+      {
+        "vaccine": "Pneumococcal (PCV20)",
+        "date": "2022-05-15"
+      },
+      {
+        "vaccine": "Hepatitis B",
+        "date": "2021-03-01"
+      }
+    ],
+    "smoking_status": "Current smoker (10 cigarettes/day, 30 pack-years)",
+    "alcohol_use": "None",
+    "drug_use": "None",
+    "occupation": "Retired rancher"
+  },
+  "allergies": [
+    {
+      "allergy_substance": "Codeine",
+      "allergy_type": "Drug",
+      "reaction": "Nausea and vomiting",
+      "severity": "Moderate"
+    }
+  ],
+  "medications": [
+    {
+      "medication_name": "Insulin glargine",
+      "medication_code": "RxNorm:274783",
+      "dose": "40",
+      "dose_unit": "units",
+      "route": "Subcutaneous",
+      "frequency": "Once daily at bedtime",
+      "adherence_notes": "Variable adherence due to access issues"
+    },
+    {
+      "medication_name": "Metformin",
+      "medication_code": "RxNorm:6809",
+      "dose": "500",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Twice daily",
+      "adherence_notes": "Moderate adherence"
+    },
+    {
+      "medication_name": "Cilostazol",
+      "medication_code": "RxNorm:21107",
+      "dose": "100",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Twice daily",
+      "adherence_notes": "For claudication"
+    },
+    {
+      "medication_name": "Lisinopril",
+      "medication_code": "RxNorm:29046",
+      "dose": "10",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence"
+    },
+    {
+      "medication_name": "Atorvastatin",
+      "medication_code": "RxNorm:83367",
+      "dose": "40",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence"
+    }
+  ],
+  "vital_signs": {
+    "blood_pressure_systolic": 152,
+    "blood_pressure_diastolic": 94,
+    "heart_rate": 82,
+    "respiratory_rate": 18,
+    "temperature": 37.2,
+    "spo2": 96,
+    "weight": 95,
+    "height": 178,
+    "bmi": 30.0
+  },
+  "lab_results": [
+    {
+      "test": "HbA1c",
+      "value": 9.2,
+      "unit": "%",
+      "date": "2024-01-20",
+      "reference_range": "<7.0",
+      "flag": "HIGH"
+    },
+    {
+      "test": "eGFR",
+      "value": 48,
+      "unit": "mL/min/1.73m²",
+      "date": "2024-01-20",
+      "reference_range": ">60",
+      "flag": "LOW"
+    },
+    {
+      "test": "Serum Creatinine",
+      "value": 1.5,
+      "unit": "mg/dL",
+      "date": "2024-01-20",
+      "reference_range": "0.7-1.3",
+      "flag": "HIGH"
+    },
+    {
+      "test": "WBC",
+      "value": 11.5,
+      "unit": "x10^9/L",
+      "date": "2024-02-05",
+      "reference_range": "4.0-11.0",
+      "flag": "HIGH"
+    },
+    {
+      "test": "ESR",
+      "value": 45,
+      "unit": "mm/hr",
+      "date": "2024-02-05",
+      "reference_range": "<20",
+      "flag": "HIGH"
+    },
+    {
+      "test": "Albumin",
+      "value": 3.0,
+      "unit": "g/dL",
+      "date": "2024-01-20",
+      "reference_range": "3.5-5.0",
+      "flag": "LOW"
+    }
+  ]
+}

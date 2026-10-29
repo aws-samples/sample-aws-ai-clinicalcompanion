@@ -1,0 +1,236 @@
+{
+  "patient_id": "004",
+  "patient_name": "Margaret O'Brien",
+  "mrn": "MRN-2024-00004",
+  "chart_number": "CHT-IE-004",
+  "first_name": "Margaret",
+  "last_name": "O'Brien",
+  "date_of_birth": "1952-11-03",
+  "sex_at_birth": "Female",
+  "gender_identity": "Female",
+  "race": "White",
+  "ethnicity": "Irish",
+  "medical_history": {
+    "past_diagnoses": [
+      "Non-small cell lung cancer Stage IIB (2022)",
+      "COPD (moderate)",
+      "Osteoporosis",
+      "Atrial fibrillation"
+    ],
+    "chronic_conditions": [
+      {
+        "condition": "Non-small cell lung cancer",
+        "diagnosed": "2022-06-15",
+        "status": "Post-treatment surveillance",
+        "notes": "Right upper lobectomy + adjuvant chemotherapy (cisplatin/vinorelbine x4 cycles). Last CT 6 months ago showed no recurrence."
+      },
+      {
+        "condition": "COPD",
+        "diagnosed": "2018-03-10",
+        "status": "Active",
+        "notes": "FEV1 58% predicted, GOLD Stage II"
+      },
+      {
+        "condition": "Atrial fibrillation",
+        "diagnosed": "2020-08-22",
+        "status": "Active",
+        "notes": "Persistent AF, rate-controlled, on anticoagulation"
+      },
+      {
+        "condition": "Osteoporosis",
+        "diagnosed": "2019-05-14",
+        "status": "Active",
+        "notes": "T-score -2.8 lumbar spine"
+      }
+    ],
+    "past_surgeries": [
+      {
+        "procedure": "Right upper lobectomy (VATS)",
+        "date": "2022-07-20",
+        "indication": "NSCLC Stage IIB"
+      },
+      {
+        "procedure": "Total knee replacement (left)",
+        "date": "2017-03-15",
+        "indication": "Severe osteoarthritis"
+      }
+    ],
+    "past_hospitalizations": [
+      {
+        "reason": "Lung cancer surgery",
+        "date": "2022-07-20",
+        "duration_days": 7
+      },
+      {
+        "reason": "COPD exacerbation",
+        "date": "2023-01-10",
+        "duration_days": 4
+      }
+    ],
+    "problem_list": [
+      "NSCLC surveillance (post-lobectomy)",
+      "COPD moderate",
+      "Atrial fibrillation",
+      "Osteoporosis",
+      "Chronic pain (post-thoracotomy)"
+    ],
+    "family_history": [
+      {
+        "relation": "Father",
+        "condition": "Lung cancer",
+        "age_at_onset": 65
+      },
+      {
+        "relation": "Sister",
+        "condition": "Breast cancer",
+        "age_at_onset": 58
+      }
+    ],
+    "social_history": {
+      "living_situation": "Lives alone, widowed",
+      "exercise": "Limited due to dyspnea, walks short distances",
+      "diet": "Regular diet, calcium supplementation"
+    },
+    "vaccination_history": [
+      {
+        "vaccine": "Influenza",
+        "date": "2023-10-05"
+      },
+      {
+        "vaccine": "COVID-19 booster",
+        "date": "2023-09-15"
+      },
+      {
+        "vaccine": "Pneumococcal (PCV20)",
+        "date": "2022-12-01"
+      },
+      {
+        "vaccine": "Shingrix (2nd dose)",
+        "date": "2021-06-10"
+      }
+    ],
+    "smoking_status": "Former smoker (quit 2018, 40 pack-years)",
+    "alcohol_use": "None",
+    "drug_use": "None",
+    "occupation": "Retired school teacher",
+    "pregnancy_history": {
+      "gravida": 3,
+      "para": 2,
+      "notes": "Last pregnancy age 32, menopause age 51"
+    }
+  },
+  "allergies": [
+    {
+      "allergy_substance": "Iodinated contrast media",
+      "allergy_type": "Drug",
+      "reaction": "Anaphylactoid reaction (urticaria, bronchospasm)",
+      "severity": "Severe"
+    },
+    {
+      "allergy_substance": "Shellfish",
+      "allergy_type": "Food",
+      "reaction": "Urticaria",
+      "severity": "Moderate"
+    }
+  ],
+  "medications": [
+    {
+      "medication_name": "Apixaban",
+      "medication_code": "RxNorm:1364430",
+      "dose": "5",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Twice daily",
+      "adherence_notes": "Good adherence, for AF stroke prevention"
+    },
+    {
+      "medication_name": "Bisoprolol",
+      "medication_code": "RxNorm:19484",
+      "dose": "5",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence, rate control for AF"
+    },
+    {
+      "medication_name": "Tiotropium",
+      "medication_code": "RxNorm:69120",
+      "dose": "18",
+      "dose_unit": "mcg",
+      "route": "Inhaled",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence"
+    },
+    {
+      "medication_name": "Alendronate",
+      "medication_code": "RxNorm:3002",
+      "dose": "70",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once weekly",
+      "adherence_notes": "Takes on empty stomach with water"
+    },
+    {
+      "medication_name": "Calcium/Vitamin D",
+      "medication_code": "RxNorm:216373",
+      "dose": "600/400",
+      "dose_unit": "mg/IU",
+      "route": "Oral",
+      "frequency": "Twice daily",
+      "adherence_notes": "Good adherence"
+    }
+  ],
+  "vital_signs": {
+    "blood_pressure_systolic": 138,
+    "blood_pressure_diastolic": 82,
+    "heart_rate": 78,
+    "respiratory_rate": 20,
+    "temperature": 36.6,
+    "spo2": 94,
+    "weight": 62,
+    "height": 160,
+    "bmi": 24.2
+  },
+  "lab_results": [
+    {
+      "test": "eGFR",
+      "value": 68,
+      "unit": "mL/min/1.73m²",
+      "date": "2024-01-20",
+      "reference_range": ">60",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "Serum Creatinine",
+      "value": 0.9,
+      "unit": "mg/dL",
+      "date": "2024-01-20",
+      "reference_range": "0.6-1.1",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "CEA",
+      "value": 2.1,
+      "unit": "ng/mL",
+      "date": "2024-01-20",
+      "reference_range": "<5.0",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "INR",
+      "value": 1.1,
+      "unit": "",
+      "date": "2024-01-20",
+      "reference_range": "0.8-1.2",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "Hemoglobin",
+      "value": 11.8,
+      "unit": "g/dL",
+      "date": "2024-01-20",
+      "reference_range": "12.0-16.0",
+      "flag": "LOW"
+    }
+  ]
+}

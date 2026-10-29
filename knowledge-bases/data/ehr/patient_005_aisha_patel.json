@@ -1,0 +1,189 @@
+{
+  "patient_id": "005",
+  "patient_name": "Aisha Patel",
+  "mrn": "MRN-2024-00005",
+  "chart_number": "CHT-UK-005",
+  "first_name": "Aisha",
+  "last_name": "Patel",
+  "date_of_birth": "1996-04-18",
+  "sex_at_birth": "Female",
+  "gender_identity": "Female",
+  "race": "Asian",
+  "ethnicity": "South Asian (British Indian)",
+  "medical_history": {
+    "past_diagnoses": [
+      "Gestational diabetes (current pregnancy)",
+      "Iron deficiency anemia"
+    ],
+    "chronic_conditions": [
+      {
+        "condition": "Gestational diabetes mellitus",
+        "diagnosed": "2024-01-05",
+        "status": "Active",
+        "notes": "Diagnosed at 26 weeks gestation, diet-controlled"
+      }
+    ],
+    "past_surgeries": [],
+    "past_hospitalizations": [
+      {
+        "reason": "Hyperemesis gravidarum",
+        "date": "2023-10-15",
+        "duration_days": 2
+      }
+    ],
+    "problem_list": [
+      "Pregnancy 30 weeks",
+      "Right upper quadrant pain",
+      "Gestational diabetes",
+      "Iron deficiency anemia"
+    ],
+    "family_history": [
+      {
+        "relation": "Mother",
+        "condition": "Type 2 Diabetes",
+        "age_at_onset": 45
+      },
+      {
+        "relation": "Father",
+        "condition": "Coronary artery disease",
+        "age_at_onset": 55
+      }
+    ],
+    "social_history": {
+      "living_situation": "Lives with husband",
+      "exercise": "Prenatal yoga, walking",
+      "diet": "Gestational diabetes diet plan"
+    },
+    "vaccination_history": [
+      {
+        "vaccine": "Tdap (pertussis booster)",
+        "date": "2024-01-10"
+      },
+      {
+        "vaccine": "Influenza",
+        "date": "2023-10-01"
+      },
+      {
+        "vaccine": "COVID-19 booster",
+        "date": "2023-06-15"
+      }
+    ],
+    "smoking_status": "Never smoker",
+    "alcohol_use": "None (pregnant)",
+    "drug_use": "None",
+    "occupation": "Pharmacist",
+    "pregnancy_history": {
+      "gravida": 2,
+      "para": 0,
+      "current_gestational_age_weeks": 30,
+      "estimated_due_date": "2024-04-10",
+      "pregnancy_status": "Pregnant",
+      "previous_pregnancies": [
+        {
+          "outcome": "Miscarriage",
+          "year": 2022,
+          "gestational_age_weeks": 8
+        }
+      ],
+      "complications": ["Gestational diabetes", "Hyperemesis gravidarum (first trimester)"]
+    }
+  },
+  "allergies": [
+    {
+      "allergy_substance": "Latex",
+      "allergy_type": "Environmental",
+      "reaction": "Contact dermatitis",
+      "severity": "Moderate"
+    }
+  ],
+  "medications": [
+    {
+      "medication_name": "Ferrous sulfate",
+      "medication_code": "RxNorm:4479",
+      "dose": "325",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Takes with vitamin C for absorption"
+    },
+    {
+      "medication_name": "Folic acid",
+      "medication_code": "RxNorm:4511",
+      "dose": "400",
+      "dose_unit": "mcg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence"
+    },
+    {
+      "medication_name": "Prenatal multivitamin",
+      "medication_code": "RxNorm:904420",
+      "dose": "1",
+      "dose_unit": "tablet",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Good adherence"
+    }
+  ],
+  "vital_signs": {
+    "blood_pressure_systolic": 122,
+    "blood_pressure_diastolic": 74,
+    "heart_rate": 88,
+    "respiratory_rate": 16,
+    "temperature": 37.1,
+    "spo2": 99,
+    "weight": 72,
+    "height": 162,
+    "bmi": 27.4
+  },
+  "lab_results": [
+    {
+      "test": "Hemoglobin",
+      "value": 10.2,
+      "unit": "g/dL",
+      "date": "2024-02-01",
+      "reference_range": "11.0-14.0",
+      "flag": "LOW"
+    },
+    {
+      "test": "Fasting glucose",
+      "value": 5.8,
+      "unit": "mmol/L",
+      "date": "2024-02-01",
+      "reference_range": "<5.3 (GDM threshold)",
+      "flag": "HIGH"
+    },
+    {
+      "test": "ALT",
+      "value": 45,
+      "unit": "U/L",
+      "date": "2024-02-08",
+      "reference_range": "7-35",
+      "flag": "HIGH"
+    },
+    {
+      "test": "AST",
+      "value": 38,
+      "unit": "U/L",
+      "date": "2024-02-08",
+      "reference_range": "8-33",
+      "flag": "HIGH"
+    },
+    {
+      "test": "Alkaline phosphatase",
+      "value": 180,
+      "unit": "U/L",
+      "date": "2024-02-08",
+      "reference_range": "30-120 (elevated in pregnancy)",
+      "flag": "HIGH"
+    },
+    {
+      "test": "eGFR",
+      "value": 112,
+      "unit": "mL/min/1.73m²",
+      "date": "2024-02-01",
+      "reference_range": ">60",
+      "flag": "NORMAL"
+    }
+  ]
+}

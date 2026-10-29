@@ -1,0 +1,107 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+
+
+# Exclude Python lib/ but NOT infra/lib/ or frontend/lib/
+/lib/
+!/infra/lib/
+!/frontend/lib/
+*.egg
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+test_venv/
+clinical-compass/venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# AWS
+*.zip
+deployment-info.json
+deployment/artifacts/
+.bedrock_agentcore/testing_deployment/
+
+# Environment
+.env
+.env.local
+use-case-sample
+
+# Configuration (contains account-specific values — use *.example.* as templates)
+deployment/config.py
+frontend/config.js
+knowledge-bases/knowledge_base_ids.json
+.bedrock_agentcore.yaml
+
+
+# Generated IAM policies (regenerate with: python deployment/iam/generate_policies.py)
+deployment/iam/websocket-lambda-permissions-policy.json
+
+# Node.js
+node_modules/
+
+# Logs
+*.log
+logs/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+tests/last_test_response.txt
+*.test.log
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Deployment artifacts
+lambda-deployment.zip
+
+# Lambda bundled dependencies (installed via pip -t, not committed)
+# Reinstall with: pip install -r backend/lambda/websocket_authorizer/requirements.txt -t backend/lambda/websocket_authorizer/ --platform manylinux2014_x86_64 --only-binary=:all:
+backend/lambda/websocket_authorizer/bin/
+backend/lambda/websocket_authorizer/cffi/
+backend/lambda/websocket_authorizer/cffi-*.dist-info/
+backend/lambda/websocket_authorizer/cryptography/
+backend/lambda/websocket_authorizer/cryptography-*.dist-info/
+backend/lambda/websocket_authorizer/jwt/
+backend/lambda/websocket_authorizer/pycparser/
+backend/lambda/websocket_authorizer/pycparser-*.dist-info/
+backend/lambda/websocket_authorizer/pyjwt-*.dist-info/
+backend/lambda/websocket_authorizer/*.so
+.protoshield/
+.semgrepignore
+
+# Threat models are maintained with the security review, not in this repository.
+# (.threatmodel/ is the Threat Modeling MCP server's default export folder.)
+.threatmodel/
+threat_model*.md
+threat_model*.json
+*.tc.json

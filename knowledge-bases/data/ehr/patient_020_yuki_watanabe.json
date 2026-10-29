@@ -1,0 +1,199 @@
+{
+  "patient_id": "020",
+  "patient_name": "Yuki Watanabe",
+  "mrn": "MRN-2024-00020",
+  "chart_number": "CHT-JP-020",
+  "first_name": "Yuki",
+  "last_name": "Watanabe",
+  "date_of_birth": "1983-07-08",
+  "sex_at_birth": "Female",
+  "gender_identity": "Female",
+  "race": "Asian",
+  "ethnicity": "Japanese",
+  "medical_history": {
+    "past_diagnoses": [
+      "Migraine with aura",
+      "Pituitary microadenoma (incidental finding, 2022)",
+      "Iron deficiency anemia"
+    ],
+    "chronic_conditions": [
+      {
+        "condition": "Migraine with aura",
+        "diagnosed": "2010-05-15",
+        "status": "Active",
+        "notes": "4-5 episodes per month, increasing frequency"
+      },
+      {
+        "condition": "Pituitary microadenoma",
+        "diagnosed": "2022-09-10",
+        "status": "Monitoring",
+        "notes": "5mm non-functioning adenoma, annual MRI surveillance"
+      }
+    ],
+    "past_surgeries": [],
+    "past_hospitalizations": [
+      {
+        "reason": "Status migrainosus",
+        "date": "2023-04-15",
+        "duration_days": 2
+      }
+    ],
+    "problem_list": [
+      "Worsening headaches (change in pattern)",
+      "Pituitary microadenoma (due for surveillance MRI)",
+      "Visual disturbance (new onset)",
+      "Iron deficiency anemia"
+    ],
+    "family_history": [
+      {
+        "relation": "Mother",
+        "condition": "Migraine",
+        "age_at_onset": 25
+      },
+      {
+        "relation": "Father",
+        "condition": "Hypertension",
+        "age_at_onset": 55
+      }
+    ],
+    "social_history": {
+      "living_situation": "Lives with husband",
+      "exercise": "Yoga, swimming (avoids high-impact due to migraines)",
+      "diet": "Migraine-trigger avoidance diet"
+    },
+    "vaccination_history": [
+      {
+        "vaccine": "Influenza",
+        "date": "2023-10-20"
+      },
+      {
+        "vaccine": "COVID-19 booster",
+        "date": "2023-09-10"
+      }
+    ],
+    "smoking_status": "Never smoker",
+    "alcohol_use": "Rare (triggers migraines)",
+    "drug_use": "None",
+    "occupation": "Translator (Japanese-English)",
+    "pregnancy_history": {
+      "gravida": 0,
+      "para": 0,
+      "pregnancy_status": "Not pregnant",
+      "contraception": "Progesterone-only pill (migraine with aura, estrogen contraindicated)",
+      "notes": "Planning pregnancy in next 1-2 years, discussed with neurologist"
+    }
+  },
+  "allergies": [
+    {
+      "allergy_substance": "Metoclopramide",
+      "allergy_type": "Drug",
+      "reaction": "Dystonic reaction",
+      "severity": "Severe"
+    },
+    {
+      "allergy_substance": "Codeine",
+      "allergy_type": "Drug",
+      "reaction": "Severe nausea and vomiting",
+      "severity": "Moderate"
+    }
+  ],
+  "medications": [
+    {
+      "medication_name": "Topiramate",
+      "medication_code": "RxNorm:38404",
+      "dose": "50",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Twice daily",
+      "adherence_notes": "Good adherence, migraine prophylaxis"
+    },
+    {
+      "medication_name": "Sumatriptan",
+      "medication_code": "RxNorm:37418",
+      "dose": "50",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "As needed for acute migraine",
+      "adherence_notes": "Uses 3-4 times per month"
+    },
+    {
+      "medication_name": "Ferrous fumarate",
+      "medication_code": "RxNorm:4478",
+      "dose": "210",
+      "dose_unit": "mg",
+      "route": "Oral",
+      "frequency": "Once daily",
+      "adherence_notes": "Moderate adherence, GI side effects"
+    },
+    {
+      "medication_name": "Desogestrel",
+      "medication_code": "RxNorm:3137",
+      "dose": "75",
+      "dose_unit": "mcg",
+      "route": "Oral",
+      "frequency": "Once daily (continuous)",
+      "adherence_notes": "Good adherence"
+    }
+  ],
+  "vital_signs": {
+    "blood_pressure_systolic": 110,
+    "blood_pressure_diastolic": 68,
+    "heart_rate": 70,
+    "respiratory_rate": 14,
+    "temperature": 36.5,
+    "spo2": 99,
+    "weight": 52,
+    "height": 158,
+    "bmi": 20.8
+  },
+  "lab_results": [
+    {
+      "test": "Prolactin",
+      "value": 18,
+      "unit": "ng/mL",
+      "date": "2024-01-20",
+      "reference_range": "2-29",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "IGF-1",
+      "value": 180,
+      "unit": "ng/mL",
+      "date": "2024-01-20",
+      "reference_range": "115-307",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "Hemoglobin",
+      "value": 10.8,
+      "unit": "g/dL",
+      "date": "2024-01-20",
+      "reference_range": "12.0-16.0",
+      "flag": "LOW"
+    },
+    {
+      "test": "Ferritin",
+      "value": 8,
+      "unit": "ng/mL",
+      "date": "2024-01-20",
+      "reference_range": "12-150",
+      "flag": "LOW"
+    },
+    {
+      "test": "eGFR",
+      "value": 105,
+      "unit": "mL/min/1.73m²",
+      "date": "2024-01-20",
+      "reference_range": ">60",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "TSH",
+      "value": 1.8,
+      "unit": "mIU/L",
+      "date": "2024-01-20",
+      "reference_range": "0.4-4.0",
+      "flag": "NORMAL"
+    }
+  ]
+}

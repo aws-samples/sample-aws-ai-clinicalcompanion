@@ -1,0 +1,26 @@
+{
+  "ehr_mock": {
+    "kb_id": "YOUR_EHR_KB_ID",
+    "kb_name": "ClinicalCompass-EHR-Mock",
+    "bucket_name": "clinicalcompass-ehr-mock-YOUR_ACCOUNT_ID",
+    "collection_id": "YOUR_COLLECTION_ID",
+    "data_source_id": "YOUR_DATA_SOURCE_ID",
+    "ingestion_job_id": "YOUR_INGESTION_JOB_ID"
+  },
+  "global_guidelines": {
+    "kb_id": "YOUR_GUIDELINES_KB_ID",
+    "kb_name": "ClinicalCompass-Global-Guidelines",
+    "bucket_name": "clinicalcompass-guidelines-YOUR_ACCOUNT_ID",
+    "collection_id": "YOUR_COLLECTION_ID",
+    "data_source_id": "YOUR_DATA_SOURCE_ID",
+    "ingestion_job_id": "YOUR_INGESTION_JOB_ID"
+  },
+  "local_regulatory": {
+    "kb_id": "YOUR_REGULATORY_KB_ID",
+    "kb_name": "ClinicalCompass-Local-Regulatory",
+    "bucket_name": "clinicalcompass-regulatory-YOUR_ACCOUNT_ID",
+    "collection_id": "YOUR_COLLECTION_ID",
+    "data_source_id": "YOUR_DATA_SOURCE_ID",
+    "ingestion_job_id": "YOUR_INGESTION_JOB_ID"
+  }
+}

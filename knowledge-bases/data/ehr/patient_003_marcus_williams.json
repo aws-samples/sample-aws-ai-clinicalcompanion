@@ -1,0 +1,129 @@
+{
+  "patient_id": "003",
+  "patient_name": "Marcus Williams",
+  "mrn": "MRN-2024-00003",
+  "chart_number": "CHT-US-003",
+  "first_name": "Marcus",
+  "last_name": "Williams",
+  "date_of_birth": "2017-01-08",
+  "sex_at_birth": "Male",
+  "gender_identity": "Male",
+  "race": "Black or African American",
+  "ethnicity": "African American",
+  "medical_history": {
+    "past_diagnoses": [
+      "Mild intermittent asthma"
+    ],
+    "chronic_conditions": [
+      {
+        "condition": "Mild intermittent asthma",
+        "diagnosed": "2020-09-15",
+        "status": "Active",
+        "notes": "Uses rescue inhaler PRN, no controller medication needed"
+      }
+    ],
+    "past_surgeries": [],
+    "past_hospitalizations": [],
+    "problem_list": [
+      "Head trauma - fall from playground equipment",
+      "Loss of consciousness (brief, <1 minute)",
+      "Vomiting x2 post-injury",
+      "Mild intermittent asthma"
+    ],
+    "family_history": [
+      {
+        "relation": "Father",
+        "condition": "Sickle cell trait",
+        "age_at_onset": null
+      },
+      {
+        "relation": "Mother",
+        "condition": "Asthma",
+        "age_at_onset": 12
+      }
+    ],
+    "social_history": {
+      "living_situation": "Lives with both parents and younger sister",
+      "school": "2nd grade, public school",
+      "activities": "Soccer, swimming"
+    },
+    "vaccination_history": [
+      {
+        "vaccine": "DTaP (5th dose)",
+        "date": "2021-01-15"
+      },
+      {
+        "vaccine": "IPV (4th dose)",
+        "date": "2021-01-15"
+      },
+      {
+        "vaccine": "MMR (2nd dose)",
+        "date": "2021-01-15"
+      },
+      {
+        "vaccine": "Influenza",
+        "date": "2023-10-20"
+      }
+    ],
+    "smoking_status": "Not applicable (pediatric)",
+    "alcohol_use": "Not applicable (pediatric)",
+    "drug_use": "Not applicable (pediatric)",
+    "occupation": "Student"
+  },
+  "allergies": [
+    {
+      "allergy_substance": "Amoxicillin",
+      "allergy_type": "Drug",
+      "reaction": "Rash",
+      "severity": "Mild"
+    }
+  ],
+  "medications": [
+    {
+      "medication_name": "Albuterol (Salbutamol)",
+      "medication_code": "RxNorm:435",
+      "dose": "90",
+      "dose_unit": "mcg",
+      "route": "Inhaled",
+      "frequency": "As needed for wheezing",
+      "adherence_notes": "Used approximately 1-2 times per month"
+    }
+  ],
+  "vital_signs": {
+    "blood_pressure_systolic": 100,
+    "blood_pressure_diastolic": 62,
+    "heart_rate": 110,
+    "respiratory_rate": 22,
+    "temperature": 37.0,
+    "spo2": 99,
+    "weight": 24,
+    "height": 122,
+    "bmi": 16.1
+  },
+  "lab_results": [
+    {
+      "test": "Hemoglobin",
+      "value": 12.8,
+      "unit": "g/dL",
+      "date": "2024-02-10",
+      "reference_range": "11.5-14.5",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "Platelets",
+      "value": 285,
+      "unit": "x10^9/L",
+      "date": "2024-02-10",
+      "reference_range": "150-400",
+      "flag": "NORMAL"
+    },
+    {
+      "test": "INR",
+      "value": 1.0,
+      "unit": "",
+      "date": "2024-02-10",
+      "reference_range": "0.8-1.2",
+      "flag": "NORMAL"
+    }
+  ]
+}
