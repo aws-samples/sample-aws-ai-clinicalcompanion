@@ -77,7 +77,7 @@ S3 (ehr-data) → Lambda (EHR Ingestion) → DynamoDB (patient-index) + KB sync
 
 #### Extending with AWS HealthLake
 
-To keep the sample quick and low-cost to deploy, patient data is stored in DynamoDB and the EHR Knowledge Base. For a FHIR-based setup, you can extend the EHR pipeline with [AWS HealthLake](https://aws.amazon.com/healthlake/), a managed FHIR R4 data store.
+This sample stores patient data in DynamoDB and the EHR Knowledge Base. To also keep patient records in FHIR R4 format, for example to integrate with other FHIR-based systems, you can extend the EHR pipeline with [AWS HealthLake](https://aws.amazon.com/healthlake/), a managed FHIR R4 data store.
 
 The EHR ingestion Lambda includes a FHIR R4 transformation (`_transform_to_fhir_r4` in `backend/lambda/ehr_ingestion/handler.py`) you can use as a starting point. To enable HealthLake:
 
