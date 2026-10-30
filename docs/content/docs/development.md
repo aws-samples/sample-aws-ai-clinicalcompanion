@@ -75,7 +75,7 @@ This re-uploads data to S3 and triggers a KB sync without touching the runtime o
 ## Project Structure
 
 ```
-aws-clinicalcompanion/
+sample-aws-ai-clinicalcompanion/
 ├── backend/
 │   ├── agents/              # Multi-agent system
 │   │   ├── supervisor_agent.py
@@ -90,6 +90,7 @@ aws-clinicalcompanion/
 │   │   ├── clinical_observability.py
 │   │   └── kb_config.py
 │   ├── lambda/websocket/    # 5 Lambda handlers
+│   ├── tests/               # Backend unit tests (pytest)
 │   ├── app.py               # AgentCore container entry point
 │   └── requirements.txt
 ├── frontend/
@@ -98,14 +99,15 @@ aws-clinicalcompanion/
 │   └── index.html
 ├── infra/                   # CDK infrastructure (TypeScript)
 │   ├── lib/
+│   ├── test/                # CDK security assertion tests (Jest)
 │   └── bin/app.ts
 ├── knowledge-bases/
 │   ├── data/                # Clinical data (EHR, guidelines, regulatory)
 │   └── upload_data.py
 ├── deployment/
 │   ├── scripts/             # Deployment and setup scripts
-│   └── config.py            # Centralised configuration
-└── tests/                   # Integration and unit tests
+│   └── config.example.py    # Config template (copy to config.py, which is gitignored)
+└── docs/                    # Hugo documentation site
 ```
 
 ## Running Tests
@@ -135,8 +137,15 @@ aws dynamodb scan --table-name clinicalcompass-patient-index \
   --profile <YOUR_PROFILE> --region us-east-1 --query 'Count'
 
 # Verify via REST API
-curl $(aws ssm get-parameter --name /clinicalcompass/http-api-endpoint \
-  --query 'Parameter.Value' --output text)/patients
+API=$(aws ssm get-parameter --name /clinicalcompass/http-api-endpoint \
+  --profile <YOUR_PROFILE> --region us-east-1 \
+  --query 'Parameter.Value' --output text)
+# The REST API requires a Cognito access token (unauthenticated calls return 401)
+TOKEN=$(aws cognito-idp initiate-auth --auth-flow USER_PASSWORD_AUTH \
+  --client-id <COGNITO_CLIENT_ID> --region us-east-1 \
+  --auth-parameters 'USERNAME=doctor,PASSWORD=<STRONG_PASSWORD>' \
+  --query 'AuthenticationResult.AccessToken' --output text)
+curl -H "Authorization: Bearer $TOKEN" $API/patients
 ```
 
 ### Guidelines Pipeline
@@ -198,4 +207,5 @@ python deployment/scripts/post_cdk_setup.py --skip-runtime  # skip AgentCore Run
 python deployment/scripts/post_cdk_setup.py --skip-memory   # skip Memory creation
 python deployment/scripts/post_cdk_setup.py --skip-data     # skip KB data upload
 python deployment/scripts/post_cdk_setup.py --skip-config   # skip config file updates
+python deployment/scripts/post_cdk_setup.py --skip-initial-upload  # skip initial data upload to CDK-managed buckets
 ```

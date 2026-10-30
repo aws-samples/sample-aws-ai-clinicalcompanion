@@ -94,9 +94,6 @@
         <mxCell id="lambda_ehr" parent="pipeline_box" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=9;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;" value="EHR Ingestion&#xa;Lambda" vertex="1">
           <mxGeometry height="40" width="40" x="140" y="50" as="geometry" />
         </mxCell>
-        <mxCell id="healthlake" parent="pipeline_box" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#DD344C;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=9;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.healthlake;" value="HealthLake&#xa;(FHIR R4)" vertex="1">
-          <mxGeometry height="40" width="40" x="270" y="50" as="geometry" />
-        </mxCell>
         <mxCell id="s3_guide" parent="pipeline_box" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=9;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.s3;" value="S3&#xa;(Guidelines)" vertex="1">
           <mxGeometry height="40" width="40" x="430" y="50" as="geometry" />
         </mxCell>
@@ -110,14 +107,11 @@
         <mxCell id="ep1" edge="1" parent="pipeline_box" source="s3_ehr" target="lambda_ehr" style="edgeStyle=orthogonalEdgeStyle;fontSize=8;" value="S3 event">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ep1b" edge="1" parent="pipeline_box" source="lambda_ehr" target="healthlake" style="edgeStyle=orthogonalEdgeStyle;fontSize=8;" value="FHIR R4">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="ep2" edge="1" parent="pipeline_box" source="s3_guide" target="lambda_guide" style="edgeStyle=orthogonalEdgeStyle;fontSize=8;" value="S3 event">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <!-- Pipeline outputs labels -->
-        <mxCell id="lbl_ehr_out" parent="pipeline_box" style="text;html=1;align=center;fontSize=8;fontColor=#666666;verticalAlign=middle;" value="→ HealthLake + DynamoDB (patient-index) + KB sync" vertex="1">
+        <mxCell id="lbl_ehr_out" parent="pipeline_box" style="text;html=1;align=center;fontSize=8;fontColor=#666666;verticalAlign=middle;" value="→ DynamoDB (patient-index) + KB sync" vertex="1">
           <mxGeometry height="20" width="260" x="50" y="140" as="geometry" />
         </mxCell>
         <mxCell id="lbl_guide_out" parent="pipeline_box" style="text;html=1;align=center;fontSize=8;fontColor=#666666;verticalAlign=middle;" value="→ DynamoDB (registry) + KB sync" vertex="1">

@@ -19,7 +19,7 @@ The primary interaction path for clinicians uses WebSocket for streaming respons
 
 1. **CloudFront** serves the static frontend from S3 (OAC-secured)
 2. **WebSocket API Gateway** handles real-time bidirectional communication
-3. **6 Lambda handlers** manage connection lifecycle and query routing
+3. **5 Lambda handlers** (connect, disconnect, query, ping, default) manage connection lifecycle and query routing, behind a **Lambda authorizer** that validates the Cognito token
 4. **AgentCore Runtime** hosts the multi-agent system that processes clinical queries
 
 ## REST API
@@ -52,8 +52,8 @@ Three Bedrock Knowledge Bases provide semantic retrieval:
 | Knowledge Base | Content | Agent |
 |---------------|---------|-------|
 | EHR | Patient demographics, labs, medications, allergies | Patient Context Agent |
-| Guidelines | ACR, ESUR, NICE, WHO clinical guidelines | Global Guidelines Agent |
-| Regulatory | HAS France, NHS local trust protocols, SOPs | Local Regulatory Agent |
+| Guidelines | International clinical guidelines (sample data: ACR contrast manual) | Global Guidelines Agent |
+| Regulatory | National and local protocols (sample data: HAS France contrast protocols) | Local Regulatory Agent |
 
 All KBs use:
 - **Embedding:** amazon.titan-embed-text-v2:0
@@ -67,14 +67,25 @@ Three separate ingestion paths feed the knowledge bases and DynamoDB:
 ### Patient (EHR) Pipeline
 
 ```
-S3 (ehr-data) → Lambda (EHR Ingestion) → HealthLake (FHIR R4) + DynamoDB (patient-index) + KB sync
+S3 (ehr-data) → Lambda (EHR Ingestion) → DynamoDB (patient-index) + KB sync
 ```
 
 - Triggered by S3 upload events
-- Transforms patient JSON to FHIR R4 format and stores in AWS HealthLake
 - Computes section hashes for differential detection (only changed sections re-processed)
 - Stores structured records in DynamoDB for direct lookups (UI Patient Selector)
 - Syncs to EHR Knowledge Base for RAG retrieval (semantic search by agents)
+
+#### Extending with AWS HealthLake
+
+This sample stores patient data in DynamoDB and the EHR Knowledge Base. To also keep patient records in FHIR R4 format, for example to integrate with other FHIR-based systems, you can extend the EHR pipeline with [AWS HealthLake](https://aws.amazon.com/healthlake/), a managed FHIR R4 data store.
+
+The EHR ingestion Lambda includes a FHIR R4 transformation (`_transform_to_fhir_r4` in `backend/lambda/ehr_ingestion/handler.py`) you can use as a starting point. To enable HealthLake:
+
+1. Create a HealthLake data store in the same Region.
+2. Update the Lambda to read the data store endpoint and send the FHIR bundle to it.
+3. Scope the Lambda's HealthLake permissions to that data store.
+
+A HealthLake data store is billed per hour while it exists. See [AWS HealthLake pricing](https://aws.amazon.com/healthlake/pricing/).
 
 ### Guidelines Pipeline
 
@@ -117,12 +128,11 @@ A vanilla JavaScript application served via CloudFront, using the [AG-UI protoco
 The entire stack is deployed via AWS CDK (TypeScript):
 
 - DynamoDB tables (connections, patient-index, guideline-registry)
-- 10 Lambda functions (WebSocket handlers, ingestion, API, keep-alive)
+- 12 Lambda functions (5 WebSocket handlers, WebSocket authorizer, EHR/guideline ingestion, patient/guideline APIs, keep-alive, guideline tamper detector)
 - WebSocket + HTTP API Gateways
 - S3 buckets (frontend, EHR data, guidelines, regulatory, KB data x3)
 - CloudFront distribution + OAC
 - OpenSearch Serverless collections
-- AWS HealthLake FHIR datastore (patient data in FHIR R4 format)
 - Cognito User Pool
 - SSM Parameter Store (resource IDs, ARNs, endpoints)
 - CloudWatch Events (AgentCore keep-alive every 5 min)

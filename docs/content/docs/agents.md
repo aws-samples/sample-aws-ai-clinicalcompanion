@@ -85,11 +85,7 @@ Consults international clinical guideline knowledge bases.
 
 **Tool:** `query_guidelines(clinical_scenario, guideline_sources)`
 
-**Knowledge Base:** Global Guidelines KB
-- ACR (American College of Radiology)
-- ESUR (European Society of Urogenital Radiology)
-- NICE (National Institute for Health and Care Excellence)
-- WHO guidelines
+**Knowledge Base:** Global Guidelines KB. Designed for sources such as ACR (American College of Radiology), ESUR (European Society of Urogenital Radiology), NICE and WHO. The sample data includes the ACR contrast manual; add others by uploading them to the guidelines bucket.
 
 **Example query:**
 ```python
@@ -107,11 +103,7 @@ Checks national and local regulatory protocols that may override international g
 
 **Tool:** `query_regulatory_protocols(clinical_scenario, jurisdiction, protocol_sources)`
 
-**Knowledge Base:** Local Regulatory KB
-- HAS France (Haute Autorité de Santé) protocols
-- NHS local trust policies
-- Regional SOPs (Standard Operating Procedures)
-- Formulary restrictions
+**Knowledge Base:** Local Regulatory KB. Designed for national and local protocols such as HAS France (Haute Autorité de Santé), NHS trust policies, regional SOPs and formulary restrictions. The sample data includes HAS France contrast protocols.
 
 **Example query:**
 ```python
@@ -165,10 +157,3 @@ knowledge-bases/data/
 - Patient data is cached in AgentCore short-term memory within a session
 - Follow-up questions reference previous context without re-querying
 - Session timeout: 30 minutes of inactivity
-
-## Performance
-
-- Full multi-agent workflow: 30-40 seconds
-- All three specialised agents execute in parallel
-- Hot storage retrieval (decision traces): <200ms
-- Individual KB query: 2-5 seconds

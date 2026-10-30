@@ -178,10 +178,10 @@ with clinical_span("custom.operation", session_id=session_id) as span:
 
 Clinical decision traces use two storage tiers:
 
-| Tier | Technology | Latency | Retention | Use Case |
-|------|-----------|---------|-----------|----------|
-| Hot | AgentCore Memory | <100ms | 24-48h | UI "View Full Reasoning" button |
-| Cold | CloudWatch Logs (OTEL) | 5-10s | 90 days+ | Audit, compliance, forensics |
+| Tier | Technology | Retention | Use Case |
+|------|-----------|-----------|----------|
+| Hot | AgentCore Memory | 30 days | UI "View Full Reasoning" button |
+| Cold | CloudWatch Logs (OTEL) | 90 days+ | Audit, compliance, forensics |
 
 The hot tier stores a structured JSON decision trace written at the end of each recommendation. The cold tier receives complete OTEL spans automatically.
 
