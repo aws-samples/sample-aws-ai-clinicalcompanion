@@ -13,6 +13,10 @@
     "diff": "cdk diff",
     "destroy": "cdk destroy --all"
   },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  },
   "devDependencies": {
     "@types/jest": "^30.0.0",
     "@types/node": "^22.0.0",
