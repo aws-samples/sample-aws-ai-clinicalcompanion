@@ -180,7 +180,7 @@ Clinical decision traces use two storage tiers:
 
 | Tier | Technology | Latency | Retention | Use Case |
 |------|-----------|---------|-----------|----------|
-| Hot | AgentCore Memory | <100ms | 24-48h | UI "View Full Reasoning" button |
+| Hot | AgentCore Memory | <200ms | 30 days | UI "View Full Reasoning" button |
 | Cold | CloudWatch Logs (OTEL) | 5-10s | 90 days+ | Audit, compliance, forensics |
 
 The hot tier stores a structured JSON decision trace written at the end of each recommendation. The cold tier receives complete OTEL spans automatically.

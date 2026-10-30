@@ -75,11 +75,12 @@ AI-powered clinical decision support system providing evidence-based imaging rec
 ## Project Structure
 
 ```
-aws-clinicalcompanion/
+sample-aws-ai-clinicalcompanion/
 ├── backend/
 │   ├── agents/                # Multi-agent system (Supervisor, Patient, Guidelines, Regulatory)
 │   ├── utils/                 # Session management, memory, observability, progress tracking
 │   ├── lambda/websocket/      # 5 Lambda handlers (connect, disconnect, query, ping, default)
+│   ├── tests/                 # Backend unit tests (pytest)
 │   ├── app.py                 # AgentCore container entry point
 │   └── requirements.txt
 ├── frontend/
@@ -89,6 +90,7 @@ aws-clinicalcompanion/
 │   └── index.html
 ├── infra/                     # CDK infrastructure (TypeScript)
 │   ├── lib/clinicalcompass-stack.ts
+│   ├── test/                  # CDK security assertion tests (Jest)
 │   └── bin/app.ts
 ├── knowledge-bases/
 │   ├── data/                  # Clinical data (EHR, guidelines, regulatory)
@@ -101,8 +103,7 @@ aws-clinicalcompanion/
 │   │   ├── cleanup_all.py     # Full teardown
 │   │   └── quick_update_agentcore.sh  # Fast local Docker rebuild
 │   └── config.example.py      # Config template
-├── docs/                      # Architecture, API, deployment docs
-└── tests/
+└── docs/                      # Hugo documentation site (content in docs/content/docs/)
 ```
 
 ## Prerequisites
@@ -151,7 +152,7 @@ See [Architecture](docs/content/docs/architecture.md) for detailed pipeline diag
 - DynamoDB tables (WebSocket connections, patient index, guideline registry)
 - ECR repository (AgentCore container images)
 - IAM roles and policies (AgentCore, Lambda, KB roles)
-- 10 Lambda functions (WebSocket handlers, EHR/guideline ingestion, patient/guideline APIs, keep-alive)
+- 12 Lambda functions (5 WebSocket handlers, WebSocket authorizer, EHR/guideline ingestion, patient/guideline APIs, keep-alive, guideline tamper detector)
 - WebSocket API Gateway + routes + integrations + stage
 - HTTP API Gateway (REST endpoints for `/patients` and `/guidelines`)
 - S3 buckets (EHR data, guidelines, KB data × 3, frontend static files)
@@ -492,7 +493,13 @@ API=$(aws ssm get-parameter --name /clinicalcompass/http-api-endpoint \
   --profile <YOUR_PROFILE> --region us-east-1 \
   --query 'Parameter.Value' --output text)
 
-curl $API/guidelines
+# The REST API requires a Cognito access token (unauthenticated calls return 401)
+TOKEN=$(aws cognito-idp initiate-auth --auth-flow USER_PASSWORD_AUTH \
+  --client-id <COGNITO_CLIENT_ID> --region us-east-1 \
+  --auth-parameters 'USERNAME=doctor,PASSWORD=<STRONG_PASSWORD>' \
+  --query 'AuthenticationResult.AccessToken' --output text)
+
+curl -H "Authorization: Bearer $TOKEN" $API/guidelines
 ```
 
 **Common issues:**
@@ -588,8 +595,8 @@ The tables below show what the sample already protects, and what must be added b
 2. Supervisor Agent parses the query and extracts clinical entities
 3. Three specialized agents run in parallel:
    - Patient Context Agent — retrieves EHR data
-   - Global Guidelines Agent — consults ACR, ESUR, NICE, WHO
-   - Local Regulatory Agent — checks HAS France protocols
+   - Global Guidelines Agent — consults international guidelines (the sample data includes the ACR contrast manual)
+   - Local Regulatory Agent — checks local protocols (the sample data includes HAS France contrast protocols)
 4. Supervisor detects conflicts between guidelines
 5. Precedence rules resolve conflicts: local > national > international
 6. Final recommendation with safety alerts, alternatives, and citations

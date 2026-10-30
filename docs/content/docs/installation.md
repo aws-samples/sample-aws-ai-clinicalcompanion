@@ -20,6 +20,14 @@ Deploy ClinicalCompass in your AWS account. The system uses AWS CDK for infrastr
 # Install Python dependencies
 pip install boto3 opensearch-py requests-aws4auth
 pip install -r backend/requirements.txt
+
+# Install WebSocket authorizer Lambda dependencies (bundled for Lambda deployment)
+# These are installed into the Lambda directory for CDK to package them.
+# Target platform must be Linux x86_64 to match the Lambda runtime.
+pip install -r backend/lambda/websocket_authorizer/requirements.txt \
+  -t backend/lambda/websocket_authorizer/ \
+  --platform manylinux2014_x86_64 \
+  --only-binary=:all:
 ```
 
 ## What Gets Deployed
@@ -32,7 +40,7 @@ pip install -r backend/requirements.txt
 | DynamoDB tables | Connections, patient-index, guideline-registry |
 | ECR repository | AgentCore container images |
 | IAM roles and policies | AgentCore, Lambda, KB access |
-| 10 Lambda functions | WebSocket handlers, EHR/guideline ingestion, patient/guideline APIs, keep-alive |
+| 12 Lambda functions | 5 WebSocket handlers, WebSocket authorizer, EHR/guideline ingestion, patient/guideline APIs, keep-alive, guideline tamper detector |
 | WebSocket API Gateway | Real-time agent communication |
 | HTTP API Gateway | REST endpoints (`/patients`, `/guidelines`) |
 | S3 buckets | Frontend static files, EHR data, guidelines, regulatory, KB data x3 |
@@ -62,6 +70,12 @@ Edit `deployment/config.py` and set:
 - `AWS_PROFILE` - your named AWS CLI profile
 - `AWS_REGION` - target region (default: `us-east-1`)
 - `AWS_ACCOUNT_ID` - your 12-digit account ID
+
+The CDK and AWS CLI commands below do not read `config.py`. Point them at the same profile and Region so everything deploys to the same account:
+
+```bash
+export AWS_PROFILE=<YOUR_PROFILE> AWS_REGION=us-east-1 AWS_DEFAULT_REGION=us-east-1
+```
 
 ### Step 2: Deploy infrastructure
 
@@ -113,8 +127,8 @@ This script:
 1. Creates HealthLake FHIR datastore (if configured)
 2. Creates OpenSearch indices
 3. Creates Bedrock Knowledge Bases
-4. Creates the AgentCore Runtime
-5. Provisions short-term memory
+4. Provisions short-term memory (AgentCore Memory), before the runtime so agent containers find the memory ID when they start
+5. Creates the AgentCore Runtime
 6. Uploads clinical data to KBs
 7. Updates `frontend/config.js` and `knowledge-bases/knowledge_base_ids.json`
 
@@ -130,6 +144,8 @@ aws bedrock-agentcore-control list-agent-runtimes \
 - `opensearch-py and requests-aws4auth required` - Install them, then re-run with `--skip-runtime --skip-memory --skip-config`
 - `Collection status: CREATING` - OpenSearch collections take 2-5 min after CDK deploy. Wait and re-run.
 - `Failed to create runtime` - Check Docker image was pushed (Step 3) and IAM role exists.
+- `Index not visible to Bedrock yet ... retrying` right after `✓ Index created` - Expected. A new OpenSearch Serverless index takes a short time to become visible to Bedrock, and the script retries for up to 3 minutes. If it still ends with `Failed to create KB ... no such index`, re-run `python deployment/scripts/post_cdk_setup.py --skip-runtime --skip-initial-upload`.
+- `Failed to provision Vector Store for the customer` during the memory step - A transient AgentCore Memory failure. The script retries up to 3 times. If it still fails, re-run only the memory step a few minutes later with `python deployment/scripts/post_cdk_setup.py --skip-kb --skip-runtime --skip-data --skip-initial-upload --skip-config`, then refresh the agent with `python deployment/scripts/build_and_push_image.py`.
 {{< /callout >}}
 
 ### Step 5: Deploy frontend to CloudFront
@@ -205,7 +221,8 @@ Choose a password that satisfies the pool policy: at least 8 characters with upp
 ## Full Teardown
 
 ```bash
-python deployment/scripts/cleanup_all.py
+python deployment/scripts/cleanup_all.py        # interactive
+python deployment/scripts/cleanup_all.py --yes  # non-interactive
 ```
 
 S3 buckets and the ECR repository have `RETAIN` removal policy and won't be deleted by `cdk destroy` alone. The cleanup script handles them.

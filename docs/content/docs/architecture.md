@@ -19,7 +19,7 @@ The primary interaction path for clinicians uses WebSocket for streaming respons
 
 1. **CloudFront** serves the static frontend from S3 (OAC-secured)
 2. **WebSocket API Gateway** handles real-time bidirectional communication
-3. **6 Lambda handlers** manage connection lifecycle and query routing
+3. **5 Lambda handlers** (connect, disconnect, query, ping, default) manage connection lifecycle and query routing, behind a **Lambda authorizer** that validates the Cognito token
 4. **AgentCore Runtime** hosts the multi-agent system that processes clinical queries
 
 ## REST API
@@ -52,8 +52,8 @@ Three Bedrock Knowledge Bases provide semantic retrieval:
 | Knowledge Base | Content | Agent |
 |---------------|---------|-------|
 | EHR | Patient demographics, labs, medications, allergies | Patient Context Agent |
-| Guidelines | ACR, ESUR, NICE, WHO clinical guidelines | Global Guidelines Agent |
-| Regulatory | HAS France, NHS local trust protocols, SOPs | Local Regulatory Agent |
+| Guidelines | International clinical guidelines (sample data: ACR contrast manual) | Global Guidelines Agent |
+| Regulatory | National and local protocols (sample data: HAS France contrast protocols) | Local Regulatory Agent |
 
 All KBs use:
 - **Embedding:** amazon.titan-embed-text-v2:0
@@ -117,7 +117,7 @@ A vanilla JavaScript application served via CloudFront, using the [AG-UI protoco
 The entire stack is deployed via AWS CDK (TypeScript):
 
 - DynamoDB tables (connections, patient-index, guideline-registry)
-- 10 Lambda functions (WebSocket handlers, ingestion, API, keep-alive)
+- 12 Lambda functions (5 WebSocket handlers, WebSocket authorizer, EHR/guideline ingestion, patient/guideline APIs, keep-alive, guideline tamper detector)
 - WebSocket + HTTP API Gateways
 - S3 buckets (frontend, EHR data, guidelines, regulatory, KB data x3)
 - CloudFront distribution + OAC
