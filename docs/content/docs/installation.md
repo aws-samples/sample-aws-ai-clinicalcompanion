@@ -53,7 +53,7 @@ pip install -r backend/lambda/websocket_authorizer/requirements.txt \
 
 | Script | Purpose |
 |--------|---------|
-| `post_cdk_setup.py` | HealthLake, OpenSearch indices, Bedrock KBs, AgentCore Memory, AgentCore Runtime, data upload, config updates |
+| `post_cdk_setup.py` | OpenSearch indices, Bedrock KBs, AgentCore Memory, AgentCore Runtime, data upload, config updates |
 | `build_and_push_image.py` | Docker build and push to ECR; refresh existing AgentCore runtime when present |
 | `deploy_frontend.py` | Generate config.js, upload to S3, invalidate CloudFront |
 | `cleanup_all.py` | Full teardown of all resources including orphans |
@@ -117,20 +117,19 @@ aws ecr describe-images --repository-name bedrock-agentcore-clinicalcompass \
 - `denied: Your authorization token has expired` - Re-run the script (it re-authenticates)
 {{< /callout >}}
 
-### Step 4: Complete setup (HealthLake, KBs, memory, runtime, data)
+### Step 4: Complete setup (KBs, memory, runtime, data)
 
 ```bash
 python deployment/scripts/post_cdk_setup.py
 ```
 
 This script:
-1. Creates HealthLake FHIR datastore (if configured)
-2. Creates OpenSearch indices
-3. Creates Bedrock Knowledge Bases
-4. Provisions short-term memory (AgentCore Memory), before the runtime so agent containers find the memory ID when they start
-5. Creates the AgentCore Runtime
-6. Uploads clinical data to KBs
-7. Updates `frontend/config.js` and `knowledge-bases/knowledge_base_ids.json`
+1. Creates OpenSearch indices
+2. Creates Bedrock Knowledge Bases
+3. Provisions short-term memory (AgentCore Memory), before the runtime so agent containers find the memory ID when they start
+4. Creates the AgentCore Runtime
+5. Uploads clinical data to KBs
+6. Updates `frontend/config.js` and `knowledge-bases/knowledge_base_ids.json`
 
 **Validate:**
 ```bash

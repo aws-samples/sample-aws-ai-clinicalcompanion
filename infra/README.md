@@ -77,8 +77,8 @@ The `ClinicalCompassStack` provisions all AWS infrastructure in a single `npx cd
 | SSM `/clinicalcompass/guideline-registry-table` | Guideline registry table name |
 | SSM `/clinicalcompass/ehr-data-bucket` | EHR data S3 bucket name |
 | SSM `/clinicalcompass/guidelines-bucket` | Guidelines S3 bucket name |
-| SSM `/clinicalcompass/fhir-datastore-id` | HealthLake ID (set by post_cdk_setup.py) |
-| SSM `/clinicalcompass/fhir-datastore-endpoint` | HealthLake endpoint (set by post_cdk_setup.py) |
+| SSM `/clinicalcompass/fhir-datastore-id` | Placeholder for an optional HealthLake data store ID |
+| SSM `/clinicalcompass/fhir-datastore-endpoint` | Placeholder for an optional HealthLake data store endpoint |
 | SSM `/clinicalcompass/http-api-endpoint` | HTTP API Gateway URL |
 | SSM `/clinicalcompass/cloudfront-url` | CloudFront distribution URL for frontend |
 | SSM `/clinicalcompass/cloudfront-distribution-id` | CloudFront distribution ID (cache invalidation) |
@@ -90,7 +90,7 @@ The `ClinicalCompassStack` provisions all AWS infrastructure in a single `npx cd
 
 | Script | Purpose | When to run |
 |--------|---------|-------------|
-| `post_cdk_setup.py` | HealthLake datastore, OpenSearch indices, Bedrock KBs, AgentCore Memory, AgentCore Runtime, data upload, config updates | After `cdk deploy` |
+| `post_cdk_setup.py` | OpenSearch indices, Bedrock KBs, AgentCore Memory, AgentCore Runtime, data upload, config updates | After `cdk deploy` |
 | `build_and_push_image.py` | Docker build & push to ECR, then refresh an existing AgentCore runtime | After backend code changes |
 | `deploy_frontend.py` | Generate config.js, upload to S3, invalidate CloudFront | After frontend code changes |
 | `cleanup_all.py` | Full teardown of all resources (stack + orphans) | Before fresh redeploy |
@@ -110,7 +110,7 @@ cd infra && npm install && npx cdk deploy --require-approval never
 # 3. Build and push agent container (requires Docker)
 cd .. && python deployment/scripts/build_and_push_image.py
 
-# 4. Complete setup (HealthLake, KBs, memory, runtime, data, configs)
+# 4. Complete setup (KBs, memory, runtime, data, configs)
 python deployment/scripts/post_cdk_setup.py
 
 # 5. Deploy frontend to CloudFront
@@ -173,7 +173,7 @@ Bedrock can still retain stale Knowledge Base records in `DELETE_UNSUCCESSFUL` a
 
 ## Design Decisions
 
-1. **No HealthLake in CDK** — Takes 5-10 min to create, causes CloudFormation timeouts and cascade failures. Created by `post_cdk_setup.py` instead.
+1. **No HealthLake by default** — The sample stores patient data in DynamoDB and the EHR Knowledge Base. HealthLake is an optional extension (see the architecture docs). A data store takes 5-10 min to create, so if you add one, create it outside CloudFormation to avoid stack timeouts.
 2. **No provisioned concurrency** — Removed to avoid deployment failures when Lambda code can't initialize. Can be re-added once the system is stable.
 3. **No `autoDeleteObjects` on S3 buckets** — The custom resource Lambda it requires can fail during stack creation, causing cascade rollback failures. Cleanup handled by `cleanup_all.py`.
 4. **All removal policies set to DESTROY** — This is a demo/dev environment. Production would use RETAIN.

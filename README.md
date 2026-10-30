@@ -165,7 +165,7 @@ See [Architecture](docs/content/docs/architecture.md) for detailed pipeline diag
 
 | Script | Purpose |
 |---|---|
-| `post_cdk_setup.py` | HealthLake datastore, OpenSearch indices, Bedrock KBs, AgentCore Memory, AgentCore Runtime, data upload, config updates |
+| `post_cdk_setup.py` | OpenSearch indices, Bedrock KBs, AgentCore Memory, AgentCore Runtime, data upload, config updates |
 | `build_and_push_image.py` | Docker build & push to ECR, and refresh an existing AgentCore runtime |
 | `deploy_frontend.py` | Generate config.js, upload to S3, invalidate CloudFront |
 | `cleanup_all.py` | Full teardown of all resources including orphans |
@@ -304,7 +304,7 @@ Bedrock Knowledge Base records can occasionally linger in `DELETE_UNSUCCESSFUL` 
 
 ### Verifying the EHR Data Pipeline
 
-The EHR pipeline is triggered automatically when patient JSON files are uploaded to the `clinicalcompass-ehr-data-<ACCOUNT_ID>` S3 bucket. The Lambda parses the file, stores structured data in DynamoDB, and (when configured) syncs to HealthLake and the Knowledge Base.
+The EHR pipeline is triggered automatically when patient JSON files are uploaded to the `clinicalcompass-ehr-data-<ACCOUNT_ID>` S3 bucket. The Lambda parses the file, stores structured data in DynamoDB, and syncs it to the Knowledge Base. To also store patient data in FHIR R4 format, see [Extending with AWS HealthLake](docs/content/docs/architecture.md#extending-with-aws-healthlake).
 
 > In the commands below, replace the placeholders with your own values. `<ACCOUNT_ID>` is your AWS account ID (`aws sts get-caller-identity --query Account --output text`). The `<..._KB_ID>` and `<..._DATA_SOURCE_ID>` values are written to `knowledge-bases/knowledge_base_ids.json` by `post_cdk_setup.py`.
 
@@ -362,7 +362,7 @@ aws logs tail /aws/lambda/clinicalcompass-ehr-ingestion --since 10m \
 
 **Common issues:**
 - `Float types are not supported` → Lambda code needs the Decimal conversion fix (redeploy Lambda)
-- `FHIR_DATASTORE_ID not configured` → Expected warning if HealthLake isn't set up yet (non-blocking)
+- `FHIR_DATASTORE_ID not configured` → Expected. The sample doesn't use HealthLake by default (see [Extending with AWS HealthLake](docs/content/docs/architecture.md#extending-with-aws-healthlake))
 - No Lambda invocations → Check S3 event notification is configured (verify in AWS Console: S3 bucket → Properties → Event notifications)
 
 ### Verifying Knowledge Base Vectorization

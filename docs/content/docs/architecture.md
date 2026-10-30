@@ -67,14 +67,25 @@ Three separate ingestion paths feed the knowledge bases and DynamoDB:
 ### Patient (EHR) Pipeline
 
 ```
-S3 (ehr-data) → Lambda (EHR Ingestion) → HealthLake (FHIR R4) + DynamoDB (patient-index) + KB sync
+S3 (ehr-data) → Lambda (EHR Ingestion) → DynamoDB (patient-index) + KB sync
 ```
 
 - Triggered by S3 upload events
-- Transforms patient JSON to FHIR R4 format and stores in AWS HealthLake
 - Computes section hashes for differential detection (only changed sections re-processed)
 - Stores structured records in DynamoDB for direct lookups (UI Patient Selector)
 - Syncs to EHR Knowledge Base for RAG retrieval (semantic search by agents)
+
+#### Extending with AWS HealthLake
+
+To keep the sample quick and low-cost to deploy, patient data is stored in DynamoDB and the EHR Knowledge Base. For a FHIR-based setup, you can extend the EHR pipeline with [AWS HealthLake](https://aws.amazon.com/healthlake/), a managed FHIR R4 data store.
+
+The EHR ingestion Lambda includes a FHIR R4 transformation (`_transform_to_fhir_r4` in `backend/lambda/ehr_ingestion/handler.py`) you can use as a starting point. To enable HealthLake:
+
+1. Create a HealthLake data store in the same Region.
+2. Update the Lambda to read the data store endpoint and send the FHIR bundle to it.
+3. Scope the Lambda's HealthLake permissions to that data store.
+
+A HealthLake data store is billed per hour while it exists. See [AWS HealthLake pricing](https://aws.amazon.com/healthlake/pricing/).
 
 ### Guidelines Pipeline
 
@@ -122,7 +133,6 @@ The entire stack is deployed via AWS CDK (TypeScript):
 - S3 buckets (frontend, EHR data, guidelines, regulatory, KB data x3)
 - CloudFront distribution + OAC
 - OpenSearch Serverless collections
-- AWS HealthLake FHIR datastore (patient data in FHIR R4 format)
 - Cognito User Pool
 - SSM Parameter Store (resource IDs, ARNs, endpoints)
 - CloudWatch Events (AgentCore keep-alive every 5 min)
