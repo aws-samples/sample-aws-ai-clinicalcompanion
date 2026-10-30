@@ -254,7 +254,4 @@ aws iam get-role-policy --role-name clinicalcompass-ws-query-role \
 
 ## References
 
-- [Design Document](../../.kiro/specs/websocket-streaming/design.md)
-- [Tasks Document](../../.kiro/specs/websocket-streaming/tasks.md)
-- [Quick Start Guide](../../docs/websocket-quickstart.md)
 - [AWS WebSocket API Documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html)

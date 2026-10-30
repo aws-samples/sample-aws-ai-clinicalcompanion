@@ -141,7 +141,7 @@ Three data categories, each with its own ingestion path:
 - Guidelines store only metadata in DynamoDB (source name, status) for the UI dropdown — full content is in the KB for RAG
 - Regulatory protocols live entirely in the KB — no DynamoDB needed (always consulted, no user selection)
 
-See [docs/architecture.md](docs/architecture.md) for detailed pipeline diagrams.
+See [Architecture](docs/content/docs/architecture.md) for detailed pipeline diagrams.
 
 ## Deployment
 
@@ -666,9 +666,9 @@ Common issues:
 
 ## Documentation
 
-- [Architecture](docs/architecture.md)
-- [Observability](docs/observability.md)
-- [Future Enhancements](docs/future-enhancements.md)
+- [Documentation site](https://aws-samples.github.io/sample-aws-ai-clinicalcompanion/)
+- [Architecture](docs/content/docs/architecture.md)
+- [Observability](docs/content/docs/observability.md)
 - [CDK Infrastructure](infra/README.md)
 - [Frontend](frontend/README.md)
 
