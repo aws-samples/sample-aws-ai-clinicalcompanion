@@ -173,7 +173,7 @@ Bedrock can still retain stale Knowledge Base records in `DELETE_UNSUCCESSFUL` a
 
 ## Design Decisions
 
-1. **No HealthLake by default** — The sample stores patient data in DynamoDB and the EHR Knowledge Base. HealthLake is an optional extension (see the architecture docs). A data store takes 5-10 min to create, so if you add one, create it outside CloudFormation to avoid stack timeouts.
+1. **No HealthLake by default** — The sample stores patient data in DynamoDB and the EHR Knowledge Base. HealthLake is an optional extension (see "Extending with AWS HealthLake" in the architecture docs).
 2. **No provisioned concurrency** — Removed to avoid deployment failures when Lambda code can't initialize. Can be re-added once the system is stable.
 3. **No `autoDeleteObjects` on S3 buckets** — The custom resource Lambda it requires can fail during stack creation, causing cascade rollback failures. Cleanup handled by `cleanup_all.py`.
 4. **All removal policies set to DESTROY** — This is a demo/dev environment. Production would use RETAIN.
