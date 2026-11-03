@@ -57,7 +57,9 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
-          hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url || 'https://aws-samples.github.io/sample-aws-ai-clinicalcompanion' }}/"
+          # Use the public URL. configure-pages can return the private Pages domain
+          # set up while the repo was private, which breaks every CSS/JS/link path.
+          hugo --gc --minify --baseURL "https://aws-samples.github.io/sample-aws-ai-clinicalcompanion/"
       - name: Upload artifact
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
